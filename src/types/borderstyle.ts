@@ -1,0 +1,41 @@
+interface IBorderColor {
+  borderLeftColor: string;
+  borderRightColor: string;
+  borderBottomColor: string;
+  borderTopColor: string;
+  borderColor: string;
+}
+
+interface IBorderWidth {
+  borderLeftWidth: string;
+  borderRightWidth: string;
+  borderBottomWidth: string;
+  borderTopWidth: string;
+  borderWidth: string;
+}
+
+type BorderColorOptional = Partial<IBorderColor>;
+type BorderWidthOptional = Partial<IBorderWidth>;
+
+type BorderOptions = IBorderWidth & IBorderColor;
+type BorderOptionsOptional = Partial<BorderOptions>;
+
+type BorderStyle =
+  | 'solid'
+  | 'double'
+  | 'dotted'
+  | 'dashed'
+  | 'outset'
+  | 'inset'
+  | 'groove'
+  | 'ridge';
+
+export {
+  IBorderColor,
+  IBorderWidth,
+  BorderColorOptional,
+  BorderWidthOptional,
+  BorderOptions,
+  BorderOptionsOptional,
+  BorderStyle,
+};
