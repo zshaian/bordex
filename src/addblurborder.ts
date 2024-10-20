@@ -29,7 +29,6 @@ function addBlurBorder(
     borderOptions;
   Object.assign(element.style, {
     boxShadow: `0px 0px 30px ${borderWidth} ${borderColor}`,
-    borderStyle: 'solid',
   });
 }
 
