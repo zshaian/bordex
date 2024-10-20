@@ -4,11 +4,12 @@ import {
   borderStyles,
 } from './types/borderstyle';
 import { colorTheme } from './utils/defaultstyle';
+import { validateHTMLElement } from './utils/validatehtmlelement';
 
 /** add a generic pre styled border to an element
  * @param {HTMLElement} element - The element to add a border
  * @param {CommonBorderStyles} borderStyle - The style of the border (e.g. "solid", "double", "dotted", etc.)
- * @param {BorderOptionsOptional} borderOptions - Optional design properties like borderColor or borderWidth
+ * @param {BorderOptionsOptional} [borderOptions = {}] - Optional design properties like borderColor or borderWidth (optional, defaults to `{}`)
  * @return void
  * @example
  * const element = document.getElementById('element');
@@ -24,14 +25,9 @@ import { colorTheme } from './utils/defaultstyle';
 function addGenericBorder(
   element: HTMLElement,
   borderStyle: CommonBorderStyles,
-  borderOptions: BorderOptionsOptional,
+  borderOptions: BorderOptionsOptional = {},
 ): void {
-  if (!(element instanceof HTMLElement)) {
-    throw new Error(
-      'Invalid argument type: This function only accepts an HTML element as its first argument.',
-    );
-  }
-
+  validateHTMLElement(element);
   if (!borderStyles.includes(borderStyle)) {
     throw new Error(
       `Invalid border style: the second argument must be one of the CommonBorderStyles ${[borderStyles.join(', ')]}`,
