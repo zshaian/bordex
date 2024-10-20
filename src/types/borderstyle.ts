@@ -20,15 +20,18 @@ type BorderWidthOptional = Partial<IBorderWidth>;
 type BorderOptions = IBorderWidth & IBorderColor;
 type BorderOptionsOptional = Partial<BorderOptions>;
 
-type BorderStyle =
-  | 'solid'
-  | 'double'
-  | 'dotted'
-  | 'dashed'
-  | 'outset'
-  | 'inset'
-  | 'groove'
-  | 'ridge';
+const borderStyles = [
+  'solid',
+  'double',
+  'dotted',
+  'dashed',
+  'outset',
+  'inset',
+  'groove',
+  'ridge',
+] as const;
+
+type CommonBorderStyles = (typeof borderStyles)[number];
 
 export {
   IBorderColor,
@@ -37,5 +40,6 @@ export {
   BorderWidthOptional,
   BorderOptions,
   BorderOptionsOptional,
-  BorderStyle,
+  CommonBorderStyles,
+  borderStyles,
 };
