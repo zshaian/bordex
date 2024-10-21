@@ -9,7 +9,7 @@ interface IDisjointedBorderOptions {
 }
 
 /**
- * add a disjointed borde to an element
+ * add a disjointed border to an element
  * @param {HTMLElement} element - The element to add a border.
  * @param {IDisjointedBorderOptions} [borderOptions = {}] - The border options (`angle`, `borderColor`)
  * @throws {Error} Will throw an error if the first argument is not an HTML element.
