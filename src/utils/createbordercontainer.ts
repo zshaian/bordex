@@ -18,6 +18,7 @@ import { getElementPosition } from './getelementposition';
 function borderContainerElement(element: HTMLElement): HTMLDivElement {
   const borderContainerElement = document.createElement('div');
   const borderContainerElementStyle = {
+    // FIXME: Find a way to set the right width to the border container instead of just setting it to max-content
     width: 'max-content',
     borderRadius: getComputedStyleValue(element, 'border-radius'),
     position: getElementPosition(element),
