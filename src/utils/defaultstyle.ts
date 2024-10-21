@@ -3,9 +3,12 @@ interface IColorTheme {
   secondary: string;
 }
 
+/**
+ * The default color theme to use if no other value is provided.
+ */
 const colorTheme: IColorTheme = {
-  primary: '#960096',
-  secondary: '#BFFF00',
+  primary: '#960096', // Main color (purple)
+  secondary: '#BFFF00', // Accent color (lime green)
 } as const;
 
 /**
