@@ -1,6 +1,6 @@
 import { FullBorderOptions } from './types/borderstyle';
 import { borderContainerElement } from './utils/createbordercontainer';
-import { COLOR_THEME } from './utils/defaultstyle';
+import { BORDER_SIZE, COLOR_THEME } from './utils/defaultstyle';
 import { getComputedStyleValue } from './utils/getcomputedstylevalue';
 import { insertAfterElement } from './utils/insertafterelement';
 import { validateHTMLElement } from './utils/validatehtmlelement';
@@ -37,7 +37,7 @@ function addOverlapBorder(
   const elementBg = getComputedStyleValue(element, 'background') as string;
 
   const {
-    borderWidth = '5px',
+    borderWidth = BORDER_SIZE.sm,
     borderTopWidth = borderWidth,
     borderRightWidth = borderWidth,
     borderBottomWidth = borderWidth,

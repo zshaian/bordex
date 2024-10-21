@@ -1,5 +1,6 @@
 import { BorderWidthOptional, CommonBorderStyles } from './types/borderstyle';
 import { borderContainerElement } from './utils/createbordercontainer';
+import { BORDER_SIZE } from './utils/defaultstyle';
 import { getComputedStyleValue } from './utils/getcomputedstylevalue';
 import { insertAfterElement } from './utils/insertafterelement';
 import { validateHTMLElement } from './utils/validatehtmlelement';
@@ -32,7 +33,7 @@ function addInsetBorder(
   validateHTMLElement(element);
   const {
     borderOffset = '15px',
-    borderWidth = '5px',
+    borderWidth = BORDER_SIZE.sm,
     borderStyle = 'solid',
   } = borderOptions;
   const borderContainer = borderContainerElement(element);

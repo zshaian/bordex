@@ -1,5 +1,5 @@
 import { borderContainerElement } from './utils/createbordercontainer';
-import { COLOR_THEME } from './utils/defaultstyle';
+import { BORDER_SIZE, COLOR_THEME } from './utils/defaultstyle';
 import { insertAfterElement } from './utils/insertafterelement';
 import { validateHTMLElement } from './utils/validatehtmlelement';
 
@@ -44,7 +44,7 @@ function addFancyBorder(
   const borderContainer = borderContainerElement(element);
   const {
     borderColor = COLOR_THEME.primary,
-    borderWidth = '5px',
+    borderWidth = BORDER_SIZE.sm,
     borderStyle = 'solid',
   } = borderOptions;
 
