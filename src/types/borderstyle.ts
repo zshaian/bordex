@@ -33,6 +33,10 @@ const borderStyles = [
 
 type CommonBorderStyles = (typeof borderStyles)[number];
 
+type FullBorderOptions = BorderOptionsOptional & {
+  borderStyle?: CommonBorderStyles;
+};
+
 export {
   IBorderColor,
   IBorderWidth,
@@ -41,5 +45,6 @@ export {
   BorderOptions,
   BorderOptionsOptional,
   CommonBorderStyles,
+  FullBorderOptions,
   borderStyles,
 };
