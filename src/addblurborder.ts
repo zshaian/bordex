@@ -1,4 +1,4 @@
-import { colorTheme } from './utils/defaultstyle';
+import { COLOR_THEME } from './utils/defaultstyle';
 import { validateHTMLElement } from './utils/validatehtmlelement';
 
 interface IBlurBorderOptions {
@@ -25,7 +25,7 @@ function addBlurBorder(
   borderOptions: IBlurBorderOptions = {},
 ): void {
   validateHTMLElement(element);
-  const { borderColor = colorTheme.primary, borderWidth = '20px' } =
+  const { borderColor = COLOR_THEME.primary, borderWidth = '20px' } =
     borderOptions;
   Object.assign(element.style, {
     boxShadow: `0px 0px 30px ${borderWidth} ${borderColor}`,

@@ -1,5 +1,5 @@
 import { BorderWidthOptional } from './types/borderstyle';
-import { colorTheme } from './utils/defaultstyle';
+import { COLOR_THEME } from './utils/defaultstyle';
 import { getComputedStyleValue } from './utils/getcomputedstylevalue';
 import { validateHTMLElement } from './utils/validatehtmlelement';
 
@@ -45,7 +45,7 @@ function gradientBorder(
   elementBackground: string,
   borderOptions: IGradientBorderOptions,
 ) {
-  const defaultGradientColors = [colorTheme.primary, colorTheme.secondary];
+  const defaultGradientColors = [COLOR_THEME.primary, COLOR_THEME.secondary];
 
   const {
     angle = '45deg',

@@ -1,5 +1,5 @@
 import { borderContainerElement } from './utils/createbordercontainer';
-import { colorTheme } from './utils/defaultstyle';
+import { COLOR_THEME } from './utils/defaultstyle';
 import { insertAfterElement } from './utils/insertafterelement';
 import { validateHTMLElement } from './utils/validatehtmlelement';
 
@@ -43,7 +43,7 @@ function addFancyBorder(
   validateHTMLElement(element);
   const borderContainer = borderContainerElement(element);
   const {
-    borderColor = colorTheme.primary,
+    borderColor = COLOR_THEME.primary,
     borderWidth = '5px',
     borderStyle = 'solid',
   } = borderOptions;

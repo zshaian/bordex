@@ -3,7 +3,7 @@ import {
   CommonBorderStyles,
   borderStyles,
 } from './types/borderstyle';
-import { colorTheme } from './utils/defaultstyle';
+import { COLOR_THEME } from './utils/defaultstyle';
 import { validateHTMLElement } from './utils/validatehtmlelement';
 
 /** add a generic pre styled border to an element
@@ -36,7 +36,7 @@ function addGenericBorder(
 
   Object.assign(element.style, {
     borderStyle,
-    borderColor: colorTheme.primary,
+    borderColor: COLOR_THEME.primary,
     borderWidth: '5px',
     ...borderOptions,
   });

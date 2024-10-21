@@ -1,4 +1,4 @@
-import { colorTheme } from './utils/defaultstyle';
+import { COLOR_THEME } from './utils/defaultstyle';
 import { borderContainerElement } from './utils/createbordercontainer';
 import { validateHTMLElement } from './utils/validatehtmlelement';
 import { insertAfterElement } from './utils/insertafterelement';
@@ -40,7 +40,7 @@ function disjointedBorder(
   borderOptions: IDisjointedBorderOptions,
 ): HTMLDivElement {
   const borderOffset = '0.3rem';
-  const { angle = '45deg', borderColor = colorTheme.primary } = borderOptions;
+  const { angle = '45deg', borderColor = COLOR_THEME.primary } = borderOptions;
   const borderElement = document.createElement('div');
   const borderElementDesign = {
     height: `calc(100% + ${borderOffset})`,

@@ -1,6 +1,6 @@
 import { FullBorderOptions } from './types/borderstyle';
 import { borderContainerElement } from './utils/createbordercontainer';
-import { colorTheme } from './utils/defaultstyle';
+import { COLOR_THEME } from './utils/defaultstyle';
 import { getComputedStyleValue } from './utils/getcomputedstylevalue';
 import { insertAfterElement } from './utils/insertafterelement';
 import { validateHTMLElement } from './utils/validatehtmlelement';
@@ -43,7 +43,7 @@ function addOverlapBorder(
     borderBottomWidth = borderWidth,
     borderLeftWidth = borderWidth,
     borderStyle = 'solid',
-    borderColor = colorTheme.primary,
+    borderColor = COLOR_THEME.primary,
     ...moreBorderOptions
   } = borderOptions;
 
