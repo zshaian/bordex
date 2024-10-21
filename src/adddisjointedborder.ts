@@ -1,6 +1,5 @@
 import { colorTheme } from './utils/defaultstyle';
-import { getComputedStyleValue } from './utils/getcomputedstylevalue';
-import { getElementPosition } from './utils/getelementposition';
+import { borderContainerElement } from './utils/createbordercontainer';
 import { validateHTMLElement } from './utils/validatehtmlelement';
 import { insertAfterElement } from './utils/insertafterelement';
 
@@ -33,22 +32,8 @@ function addDisjointedBorder(
   const borderContainer = borderContainerElement(element);
 
   // append the the disjointedBorder element that's going to act as a bordrer to the borderContainer element
-  borderContainer.append(disjointedBorder(borderOptions));
   insertAfterElement(element, borderContainer);
-  borderContainer.append(element);
-}
-
-function borderContainerElement(element: HTMLElement): HTMLDivElement {
-  const borderContainerElement = document.createElement('div');
-  const borderContainerElementStyle = {
-    width: 'max-content',
-    borderRadius: getComputedStyleValue(element, 'border-radius'),
-    position: getElementPosition(element),
-  };
-
-  Object.assign(borderContainerElement.style, borderContainerElementStyle);
-
-  return borderContainerElement;
+  borderContainer.append(element, disjointedBorder(borderOptions));
 }
 
 function disjointedBorder(
