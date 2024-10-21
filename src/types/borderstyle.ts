@@ -1,3 +1,16 @@
+const borderStyles = [
+  'solid',
+  'double',
+  'dotted',
+  'dashed',
+  'outset',
+  'inset',
+  'groove',
+  'ridge',
+] as const;
+
+type CommonBorderStyles = (typeof borderStyles)[number];
+
 interface IBorderColor {
   borderLeftColor: string;
   borderRightColor: string;
@@ -14,34 +27,30 @@ interface IBorderWidth {
   borderWidth: string;
 }
 
+interface IBorderStyle {
+  borderLeftStyle: CommonBorderStyles;
+  borderRightStyle: CommonBorderStyles;
+  borderBottomStyle: CommonBorderStyles;
+  borderTopStyle: CommonBorderStyles;
+  borderStyle: CommonBorderStyles;
+}
+
 type BorderColorOptional = Partial<IBorderColor>;
 type BorderWidthOptional = Partial<IBorderWidth>;
+type BorderStyleOptional = Partial<IBorderStyle>;
 
-type BorderOptions = IBorderWidth & IBorderColor;
+type BorderOptions = IBorderWidth & IBorderColor & IBorderStyle;
 type BorderOptionsOptional = Partial<BorderOptions>;
 
-const borderStyles = [
-  'solid',
-  'double',
-  'dotted',
-  'dashed',
-  'outset',
-  'inset',
-  'groove',
-  'ridge',
-] as const;
-
-type CommonBorderStyles = (typeof borderStyles)[number];
-
-type FullBorderOptions = BorderOptionsOptional & {
-  borderStyle?: CommonBorderStyles;
-};
+type FullBorderOptions = BorderOptionsOptional;
 
 export {
   IBorderColor,
   IBorderWidth,
+  IBorderStyle,
   BorderColorOptional,
   BorderWidthOptional,
+  BorderStyleOptional,
   BorderOptions,
   BorderOptionsOptional,
   CommonBorderStyles,
