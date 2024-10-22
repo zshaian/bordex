@@ -1,3 +1,4 @@
+import { CommonBorderStyles } from './types/borderstyle';
 import { borderContainerElement } from './utils/createbordercontainer';
 import { BORDER_SIZE, COLOR_THEME } from './utils/defaultstyle';
 import { insertAfterElement } from './utils/insertafterelement';
@@ -6,7 +7,7 @@ import { validateHTMLElement } from './utils/validatehtmlelement';
 interface IFancyBorderOptions {
   borderColor?: string;
   borderWidth?: string;
-  borderStyle?: string;
+  borderStyle?: CommonBorderStyles;
 }
 
 interface ISideBlocks {
