@@ -55,6 +55,7 @@ function gradientBorder(
   } = borderOptions;
 
   const gradientBorderStyle = {
+    //TODO: allow it to have a specific stops for every colors
     background: `linear-gradient(${elementBackground},${elementBackground}) padding-box, linear-gradient(${angle},${colors.join(',')}) border-box`,
     borderStyle: 'solid',
     borderColor: 'transparent',
