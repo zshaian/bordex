@@ -24,6 +24,12 @@ function borderContainerElement(element: HTMLElement): HTMLDivElement {
     position: getElementPosition(element),
   };
 
+  /*
+    sets the position of element to relative, because the border container element, already
+    have the same position value of the element.
+  */
+  element.style.position = 'relative';
+
   Object.assign(borderContainerElement.style, borderContainerElementStyle);
 
   return borderContainerElement;
