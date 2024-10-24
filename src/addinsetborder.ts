@@ -36,34 +36,31 @@ function addInsetBorder(
     borderWidth = BORDER_SIZE.sm,
     borderStyle = 'solid',
   } = borderOptions;
+
   const borderContainer = borderContainerElement(element);
   const borderContainerStyle = {
     borderWidth,
     borderStyle,
     borderColor: 'transparent',
   };
-  const insideBorderElement = insideBorder(borderOffset, element);
-  const outsideBordElement = outsideBorder(borderOffset, element);
-  // this thing is the one that's going to act as a background to the element,
-  // because we need a way to overlap the inside and outside border element to the background.
-  const elementBaseBackgroundElement = backgroundElement(element);
+
+  const insideBorderElement = insideBorder(borderOffset, borderWidth, element);
+  const outsideBordElement = outsideBorder(
+    borderOffset,
+    borderWidth,
+    borderContainer,
+  );
 
   Object.assign(borderContainer.style, borderContainerStyle);
   insertAfterElement(element, borderContainer);
-  borderContainer.append(
-    element,
-    insideBorderElement,
-    outsideBordElement,
-    elementBaseBackgroundElement,
-  );
-
-  // set the background of an element to transparent so we can see the inside and outside border element,
-  // without getting covered by the element's background
-  element.style.background = 'transparent';
-  element.style.background = 'none';
+  borderContainer.append(element, insideBorderElement, outsideBordElement);
 }
 
-function insideBorder(offset: string, element: HTMLElement): HTMLDivElement {
+function insideBorder(
+  offset: string,
+  borderWidth: string,
+  element: HTMLElement,
+): HTMLDivElement {
   /* ISSUE: if there's no specific background-color set to an element this is going to return a transparent background,
      causing the insideBorderElement to also have a transparent color, also if the element  have a background image
      set to them it's not going to get apply to the border.
@@ -82,23 +79,24 @@ function insideBorder(offset: string, element: HTMLElement): HTMLDivElement {
     borderTopColor: `${elementParentBgc}`,
     borderLeftColor: `${elementParentBgc}`,
     position: 'absolute',
-    left: `${offset}`,
-    top: `${offset}`,
+    left: `calc(${offset} + ${borderWidth})`,
+    top: `calc(${offset} + ${borderWidth})`,
     zIndex: '-1',
   };
   Object.assign(insideBorderElement.style, insideBorderElementStyle);
   return insideBorderElement;
 }
 
-function outsideBorder(offset: string, element: HTMLElement): HTMLDivElement {
+function outsideBorder(
+  offset: string,
+  borderWidth: string,
+  element: HTMLElement,
+): HTMLDivElement {
   /* ISSUE: if there's no specific background-color set to an element this is going to return a transparent color,
      causing the outisdeBorderElement to also have a transparent color, also if the parent of the element have a 
      background image set to them it's not going to get apply to the border.
   */
-  const elementBgc = getComputedStyleValue(
-    element,
-    'background-color',
-  ) as string;
+  const elementBgc = element.style.backgroundColor;
   const outsideBorderElement = document.createElement('div');
   const outsideBorderElementDesign = {
     height: '100%',
@@ -107,35 +105,12 @@ function outsideBorder(offset: string, element: HTMLElement): HTMLDivElement {
     border: 'inherit',
     borderColor: `${elementBgc}`,
     position: 'absolute',
-    left: `${offset}`,
-    top: `${offset}`,
-    zIndex: '-3',
+    left: `calc(${offset} + ${borderWidth})`,
+    top: `calc(${offset} + ${borderWidth})`,
+    zIndex: '-2',
   };
   Object.assign(outsideBorderElement.style, outsideBorderElementDesign);
   return outsideBorderElement;
-}
-
-function backgroundElement(element: HTMLElement): HTMLDivElement {
-  // ISSUE: this is going to return a transparent background if the element didn't have a specific background set on them
-  // causing this backgroundElement to also have a transparent background
-  const elementBgc = getComputedStyleValue(
-    element,
-    'background-color',
-  ) as string;
-  const elementBg = getComputedStyleValue(element, 'background') as string;
-  const background = document.createElement('div');
-  const backgroundStyle = {
-    height: '100%',
-    width: '100%',
-    borderRadius: 'inherit',
-    position: 'absolute',
-    inset: '0',
-    backgroundColor: elementBgc,
-    background: elementBg,
-    zIndex: '-2',
-  };
-  Object.assign(background.style, backgroundStyle);
-  return background;
 }
 
 export { addInsetBorder };
