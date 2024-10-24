@@ -35,6 +35,19 @@ interface IBorderStyle {
   borderStyle: CommonBorderStyles;
 }
 
+interface IShorthandBorderOptions {
+  borderWidth?: string;
+  borderColor?: string;
+  borderStyle?: CommonBorderStyles;
+}
+
+interface IShorthandBorder {
+  borderLeft?: string;
+  borderRight?: string;
+  borderTop?: string;
+  borderBottom?: string;
+}
+
 type BorderColorOptional = Partial<IBorderColor>;
 type BorderWidthOptional = Partial<IBorderWidth>;
 type BorderStyleOptional = Partial<IBorderStyle>;
@@ -48,6 +61,8 @@ export {
   IBorderColor,
   IBorderWidth,
   IBorderStyle,
+  IShorthandBorderOptions,
+  IShorthandBorder,
   BorderColorOptional,
   BorderWidthOptional,
   BorderStyleOptional,
