@@ -60,10 +60,11 @@ function addThinBorder(
   }
 
   const isThinBorderOnSide = ['left', 'right', 'horizontal'].includes(side);
+  const gradientAngle = isThinBorderOnSide ? 'to bottom' : 'to left';
   const borderImageSlice = getBorderImageSlice(side);
 
   const thinBorderStyle = {
-    borderImageSource: `linear-gradient(${isThinBorderOnSide ? 'to bottom' : 'to left'},rgba(0,0,0,0) 1%, ${color} 50%, rgba(0,0,0,0) 99%)`,
+    borderImageSource: `linear-gradient(${gradientAngle},rgba(0,0,0,0) 1%, ${color} 50%, rgba(0,0,0,0) 99%)`,
     borderImageOutset: `${isThinBorderOnSide ? `0 ${outset}` : `${outset} 0`}`,
     borderImageWidth: '1.5px', // width of the border, maybe adjust it later if it's too thin.
     borderImageSlice,
@@ -75,7 +76,7 @@ function addThinBorder(
 /**
  * This is going to return a value on where or what side to put the border.
  *
- * @param {ThinBorderSides} side - The side to put the borde.
+ * @param {ThinBorderSides} side - The side to put the border.
  * @returns {string} The `border-image-slice` CSS property value.
  */
 // TODO: Allow the option to apply a thin border to all four sides of the element.
