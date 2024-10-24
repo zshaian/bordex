@@ -1,30 +1,20 @@
-import { CommonBorderStyles } from './types/borderstyle';
+import { IPositions, IShorthandBorderOptions } from './types/borderstyle';
 import { borderContainerElement } from './utils/createbordercontainer';
 import { BORDER_SIZE, COLOR_THEME } from './utils/defaultstyle';
 import { insertAfterElement } from './utils/insertafterelement';
 import { validateHTMLElement } from './utils/validatehtmlelement';
 
-interface IFancyBorderOptions {
-  borderColor?: string;
-  borderWidth?: string;
-  borderStyle?: CommonBorderStyles;
-}
-
-interface ISideBlocks {
+interface ISideBlocks extends IPositions {
   borderLeft?: string;
   borderTop?: string;
   borderBottom?: string;
   borderRight?: string;
-  top?: string;
-  left?: string;
-  bottom?: string;
-  right?: string;
 }
 
 /**
  * Add a fancy border to an element.
  * @param {HTMLElement} element - The element to add a fancy border to.
- * @param {IFancyBorderOptions} [borderOptions={}] - The border options (`borderColor`, `borderWidth`, `borderStyle`).
+ * @param {IShorthandBorderOptions} [borderOptions={}] - The border options (`borderColor`, `borderWidth`, `borderStyle`).
  * @throws {Error} Will throw an error if the first argument is not an HTML element.
  * @returns {void}
  * @example
@@ -39,7 +29,7 @@ interface ISideBlocks {
  */
 function addFancyBorder(
   element: HTMLElement,
-  borderOptions: IFancyBorderOptions = {},
+  borderOptions: IShorthandBorderOptions = {},
 ): void {
   validateHTMLElement(element);
   const borderContainer = borderContainerElement(element);
@@ -57,7 +47,7 @@ function addFancyBorder(
   });
 
   insertAfterElement(element, borderContainer);
-  appendSideBlockBorders(borderContainer);
+  createAndAppendSideBlockBorders(borderContainer);
   borderContainer.append(element, outsetBorder(borderWidth));
 }
 
@@ -66,7 +56,6 @@ function addFancyBorder(
  * @param {sting} elementBorderWidth - The width of the inside border, this is use to calculate the offset of the outerBorder element to the inside border
  * @returns {HTMLDivElement} returns the outset border element (`div`)
  */
-
 function outsetBorder(elementBorderWidth: string): HTMLDivElement {
   const outsetBorderElement = document.createElement('div');
   const outerElementOffset = '20px';
@@ -92,8 +81,8 @@ function outsetBorder(elementBorderWidth: string): HTMLDivElement {
  * @param {HTMLElement} borderContainer - The border container element that is going to append all of the four side blocks
  * @return void
  */
-function appendSideBlockBorders(borderContainer: HTMLElement): void {
-  const blockPositions: ISideBlocks[] = [
+function createAndAppendSideBlockBorders(borderContainer: HTMLElement): void {
+  const sideBlockBordersPosition: ISideBlocks[] = [
     {
       borderRight: 'inherit',
       borderBottom: 'inherit',
@@ -120,7 +109,9 @@ function appendSideBlockBorders(borderContainer: HTMLElement): void {
     },
   ];
 
-  blockPositions.forEach(block => borderContainer.append(sideBlock(block)));
+  sideBlockBordersPosition.forEach(sideBlockBorderOptions =>
+    borderContainer.append(createSideBlockBorder(sideBlockBorderOptions)),
+  );
 }
 
 /**
@@ -128,7 +119,9 @@ function appendSideBlockBorders(borderContainer: HTMLElement): void {
  * @param {ISideBlocks} blockOptions - the border options for this element, the four border sides and the position of it inside of the border container element
  * @returns {HTMLDivElement} returns the block border element (`div`)
  */
-function sideBlock(blockOptions: ISideBlocks): HTMLDivElement {
+function createSideBlockBorder(
+  sideBlockBorderOptions: ISideBlocks,
+): HTMLDivElement {
   const sideBlockElement = document.createElement('div');
   const blockSize = '10px';
   const boxElementStyle = {
@@ -136,7 +129,7 @@ function sideBlock(blockOptions: ISideBlocks): HTMLDivElement {
     width: blockSize,
     boxSizing: 'inherit',
     position: 'absolute',
-    ...blockOptions,
+    ...sideBlockBorderOptions,
   };
   Object.assign(sideBlockElement.style, boxElementStyle);
   return sideBlockElement;
