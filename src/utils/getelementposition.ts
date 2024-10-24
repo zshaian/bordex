@@ -1,3 +1,5 @@
+import { getComputedStyleValue } from './getcomputedstylevalue';
+
 type ElementPosition = 'static' | 'relative' | 'absolute' | 'sticky' | 'fixed';
 
 /**
@@ -7,9 +9,11 @@ type ElementPosition = 'static' | 'relative' | 'absolute' | 'sticky' | 'fixed';
  * @returns {ElementPosition} The current position value of the element (`'relative'` if originally `'static'`).
  */
 function getElementPosition(element: HTMLElement): ElementPosition {
-  const elementPosition = window
-    .getComputedStyle(element)
-    .getPropertyValue('position') as ElementPosition;
+  const elementPosition = getComputedStyleValue(
+    element,
+    'position',
+  ) as ElementPosition;
+
   return elementPosition === 'static' ? 'relative' : elementPosition;
 }
 
