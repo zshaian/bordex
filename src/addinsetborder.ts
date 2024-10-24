@@ -60,11 +60,14 @@ function addInsetBorder(
   // set the background of an element to transparent so we can see the inside and outside border element,
   // without getting covered by the element's background
   element.style.background = 'transparent';
+  element.style.background = 'none';
 }
 
 function insideBorder(offset: string, element: HTMLElement): HTMLDivElement {
-  // ISSUE: if there's no specific background-color set to an element this is going to return a transparent background,
-  // cauing the insideBorderElement to also have a transparent color.
+  /* ISSUE: if there's no specific background-color set to an element this is going to return a transparent background,
+     causing the insideBorderElement to also have a transparent color, also if the element  have a background image
+     set to them it's not going to get apply to the border.
+  */
   const elementParentBgc = getComputedStyleValue(
     element.parentElement as HTMLElement,
     'background-color',
@@ -88,8 +91,10 @@ function insideBorder(offset: string, element: HTMLElement): HTMLDivElement {
 }
 
 function outsideBorder(offset: string, element: HTMLElement): HTMLDivElement {
-  // ISSUE: if there's no specific background-color set to an element this is going to return a transparent color,
-  // cauing the outisdeBorderElemnt to also have a transparent color.
+  /* ISSUE: if there's no specific background-color set to an element this is going to return a transparent color,
+     causing the outisdeBorderElement to also have a transparent color, also if the parent of the element have a 
+     background image set to them it's not going to get apply to the border.
+  */
   const elementBgc = getComputedStyleValue(
     element,
     'background-color',
