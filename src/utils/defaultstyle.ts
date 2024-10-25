@@ -15,7 +15,7 @@ const BORDER_SIZE = {
 /**
  * Sets a default position of `relative` to an element if its position is currently set to `static`.
  * @param {HTMLElement} element - The element for which to set a default position.
- * @return void
+ * @returns {void} No return value.
  * @example
  * const element = document.getElementById('element');
  *

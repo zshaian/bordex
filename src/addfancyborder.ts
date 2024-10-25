@@ -79,7 +79,7 @@ function outsetBorder(elementBorderWidth: string): HTMLDivElement {
 /**
  * This is the function that's going to create and append all of the four side blocks that is inside of the element border.
  * @param {HTMLElement} borderContainer - The border container element that is going to append all of the four side blocks
- * @return void
+ * @returns {void} No return value.
  */
 function createAndAppendSideBlockBorders(borderContainer: HTMLElement): void {
   const sideBlockBordersPosition: ISideBlocks[] = [

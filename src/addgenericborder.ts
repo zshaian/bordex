@@ -10,7 +10,7 @@ import { validateHTMLElement } from './utils/validatehtmlelement';
  * @param {HTMLElement} element - The element to add a border
  * @param {CommonBorderStyles} borderStyle - The style of the border (e.g. "solid", "double", "dotted", etc.)
  * @param {BorderOptionsOptional} [borderOptions = {}] - Optional design properties like borderColor or borderWidth (optional, defaults to `{}`)
- * @return void
+ * @returns {void} No return value.
  * @example
  * const element = document.getElementById('element');
  * const anotherElement = document.getElementById('anotherElement');

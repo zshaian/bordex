@@ -2,7 +2,7 @@
  * Inserts a new element immediately after the target element.
  * @param {HTMLElement} element - The target element to insert the new element after.
  * @param {HTMLElement} newElement - The new element to insert after the target element.
- * @return void
+ * @returns {void} No return value.
  * @example
  * const element = document.getElementById('element');
  * const newElement = document.createElement('div');

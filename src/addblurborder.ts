@@ -9,7 +9,7 @@ interface IBlurBorderOptions {
  * add a blur border style to an element
  * @param {HTMLElement} element - The element to add the blur border
  * @param {IBlurBorderOptions} [borderOptions = {}] - Optional design properties like borderColor or borderWidth (optional, defaults to `{}`)
- * @return void
+ * @returns {void} No return value.
  * @example
  * const element = document.getElementById('element');
  * const anotherElement = document.getElementById('anotherElement');

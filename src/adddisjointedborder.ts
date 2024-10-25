@@ -13,7 +13,7 @@ interface IDisjointedBorderOptions {
  * @param {HTMLElement} element - The element to add a border.
  * @param {IDisjointedBorderOptions} [borderOptions = {}] - The border options (`angle`, `borderColor`)
  * @throws {Error} Will throw an error if the first argument is not an HTML element.
- * @return void
+ * @returns {void} No return value.
  * @example
  * const element = document.getElementById('element');
  * const anotherElement = document.getElementById('anotherElement');
