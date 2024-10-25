@@ -1,7 +1,6 @@
 import { FullBorderOptions } from './types/borderstyle';
 import { borderContainerElement } from './utils/createbordercontainer';
 import { BORDER_SIZE, COLOR_THEME } from './utils/defaultstyle';
-import { getComputedStyleValue } from './utils/getcomputedstylevalue';
 import { insertAfterElement } from './utils/insertafterelement';
 import { validateHTMLElement } from './utils/validatehtmlelement';
 
@@ -30,12 +29,6 @@ function addOverlapBorder(
   const borderContainer = borderContainerElement(element);
   const outsideBorderElementOffset = '40px';
 
-  const elementBgc = getComputedStyleValue(
-    element,
-    'background-color',
-  ) as string;
-  const elementBg = getComputedStyleValue(element, 'background') as string;
-
   const {
     borderWidth = BORDER_SIZE.sm,
     borderTopWidth = borderWidth,
@@ -49,8 +42,6 @@ function addOverlapBorder(
 
   // Set style for border container
   Object.assign(borderContainer.style, {
-    backgroundColor: elementBgc,
-    background: elementBg,
     borderWidth,
     borderTopWidth,
     borderRightWidth,
@@ -74,13 +65,6 @@ function addOverlapBorder(
       horizontalBorderWidth,
     ),
   );
-
-  // Set the background color of the element to transparent and clear its current background, if any.
-  // This is done because we copied the element's background to the borderContainerElement to address the gap
-  // between the border of the borderContainerElement and the element's background.
-  // FIXME: Find a better way to achieve this, possibly by retrieving the border widths for all four sides of the borderContainerElement and adding them to its border radius.
-  element.style.backgroundColor = 'transparent';
-  element.style.background = 'none';
 }
 
 function outsideBorderElement(
