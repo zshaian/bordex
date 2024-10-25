@@ -61,11 +61,16 @@ function addThinBorder(
 
   const isThinBorderOnSide = ['left', 'right', 'horizontal'].includes(side);
   const gradientAngle = isThinBorderOnSide ? 'to bottom' : 'to left';
+  /*
+   if the thin border is on the side we will apply the outset spacing in horizontal direction (space on left, right),
+   otherwise we will apply the border outset space in the vertical direction (space on top, bottom).
+  */
+  const computedBorderOutset = `${isThinBorderOnSide ? `0 ${outset}` : `${outset} 0`}`;
   const borderImageSlice = getBorderImageSlice(side);
 
   const thinBorderStyle = {
     borderImageSource: `linear-gradient(${gradientAngle},rgba(0,0,0,0) 1%, ${color} 50%, rgba(0,0,0,0) 99%)`,
-    borderImageOutset: `${isThinBorderOnSide ? `0 ${outset}` : `${outset} 0`}`,
+    borderImageOutset: computedBorderOutset,
     borderImageWidth: '1.5px', // width of the border, maybe adjust it later if it's too thin.
     borderImageSlice,
   };
