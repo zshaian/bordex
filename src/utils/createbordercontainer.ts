@@ -27,9 +27,7 @@ function borderContainerElement(element: HTMLElement): HTMLDivElement {
     position: getElementPosition(element),
     zIndex: getComputedStyleValue(element, 'z-index'),
   };
-  /* reset all the style properties of the element, that get copied,
-     into the borderContainerElmement.
-  */
+
   resetCopiedElementStyles(element, borderContainerElement);
 
   Object.assign(borderContainerElement.style, borderContainerElementStyle);
@@ -37,20 +35,26 @@ function borderContainerElement(element: HTMLElement): HTMLDivElement {
   return borderContainerElement;
 }
 
-// TODO: document this function.
+/**
+ * Resets the styles of the element and copies specific styles (like background) into the baseElement.
+ * Specifically, it resets the position and z-index to prevent conflict with the base element,
+ * then copies and clears the background.
+ *
+ * @param {HTMLElement} element - The element whose styles will be reset.
+ * @param {HTMLElement} baseElement - The element that will receive the background style from `element`.
+ * @returns {void} - No return value.
+ */
 function resetCopiedElementStyles(
   element: HTMLElement,
   baseElement: HTMLElement,
 ): void {
-  /*
-    sets the position and z-index of an element to relative, because the border container element already
-    have the same position and z-index value of the element.
-  */
+  // Reset position and z-index to avoid style conflict with baseElement
   element.style.position = 'relative';
   element.style.zIndex = 'auto';
 
-  copySourceBackground(element, baseElement); // copy the background of element to the border container element.
-  clearElementBackground(element); // clear the background of the element (cause we just copied it to the border container element).
+  // Copy background from element to baseElement, then clear element background
+  copySourceBackground(element, baseElement);
+  clearElementBackground(element);
 }
 
 export { borderContainerElement };
