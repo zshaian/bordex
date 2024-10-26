@@ -22,7 +22,7 @@ interface ISideBlocks extends IPositions {
  * const anotherElement = document.getElementById('anotherElement');
  *
  * // Add fancy border to the element with default options
- * addFancytBorder(element);
+ * addFancyBorder(element);
  *
  * // Add a fancy border to the element with a provided options
  * addFancyBorder(anotherElement, { borderColor: 'yellow' , borderWidth: '5px', borderStyle: 'double' });
