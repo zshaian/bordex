@@ -75,15 +75,11 @@ function outsideBorderElement(
   const outsideBorder = document.createElement('div');
 
   const outsideBorderStyle = {
-    height: `calc(100% + ${outsideBorderElementOffset} + ${verticalBorderWidth})`,
-    width: `calc((100% - ${outsideBorderElementOffset}) - ${horizontalBorderWidth})`,
     boxSizing: 'content-box',
     border: 'inherit',
     borderRadius: 'inherit',
     position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
+    inset: `calc(0px - (${outsideBorderElementOffset} + ${verticalBorderWidth})) calc(${outsideBorderElementOffset} - ${horizontalBorderWidth})`,
     zIndex: '-1',
   };
 

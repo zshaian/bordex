@@ -39,17 +39,13 @@ function addDisjointedBorder(
 function disjointedBorder(
   borderOptions: IDisjointedBorderOptions,
 ): HTMLDivElement {
-  const borderOffset = '0.3rem';
+  const borderOffset = '0.1rem';
   const { angle = '45deg', borderColor = COLOR_THEME.primary } = borderOptions;
   const borderElement = document.createElement('div');
   const borderElementDesign = {
-    height: `calc(100% + ${borderOffset})`,
-    width: `calc(100% + ${borderOffset})`,
     background: `linear-gradient(${angle},#00000000 1%,${borderColor} 50%,#00000000 99%)`,
     position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%,-50%)',
+    inset: `-${borderOffset}`,
     borderRadius: 'inherit',
     zIndex: '-1',
   };

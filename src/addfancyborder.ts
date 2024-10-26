@@ -59,17 +59,13 @@ function addFancyBorder(
 function outsetBorder(elementBorderWidth: string): HTMLDivElement {
   const outsetBorderElement = document.createElement('div');
   const outerElementOffset = '20px';
-  const outsetBorderElementSize = `calc(100% + ${outerElementOffset} + ${elementBorderWidth})`;
+  const outsetBorderElementSize = `calc(0px - (${outerElementOffset} + ${elementBorderWidth}))`;
   const outsetBorderElementStyle = {
-    height: outsetBorderElementSize,
-    width: outsetBorderElementSize,
     boxSizing: 'inherit',
     border: 'inherit',
     borderRadius: 'inherit',
     position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%,-50%)',
+    inset: `${outsetBorderElementSize}`,
     zIndex: '-1',
   };
   Object.assign(outsetBorderElement.style, outsetBorderElementStyle);
