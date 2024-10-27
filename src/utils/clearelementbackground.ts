@@ -1,10 +1,9 @@
 /**
- * this will set the background of the element to transparent.
- * @param {HTMLElement} element - The element that you want to set the background to transparent.
+ * Clears any background styling (color, image, gradient, etc.) from the specified element.
+ * @param {HTMLElement} element - The element whose background you want to remove.
  * @returns {void} No return value.
  */
 function clearElementBackground(element: HTMLElement): void {
-  element.style.backgroundColor = 'transparent';
   element.style.background = 'none';
 }
 
