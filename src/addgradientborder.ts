@@ -13,6 +13,7 @@ interface IGradientBorderOptions extends BorderWidthOptional {
  * Add a gradient border to an element.
  * @param {HTMLElement} element - The element to add a gradient border to.
  * @param {IGradientBorderOptions} [borderOptions={}] - The border options (`angle`, `colors`, `borderWidth`, etc.).
+ * @param {string} [className] - Optional class name to apply custom CSS styling to the container.
  * @throws {Error} Will throw an error if the first argument is not an HTML element.
  * @returns {void}
  * @example
@@ -29,8 +30,9 @@ interface IGradientBorderOptions extends BorderWidthOptional {
 function addGradientBorder(
   element: HTMLElement,
   borderOptions: IGradientBorderOptions = {},
+  className?: string,
 ): void {
-  const borderContainer = borderContainerElement(element);
+  const borderContainer = borderContainerElement(element, className);
 
   const borderContainerBackground = getComputedStyleValue(
     borderContainer,

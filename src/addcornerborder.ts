@@ -13,11 +13,13 @@ type ICornerBorderOptions = IShorthandBorder & IPositions & IBorderRadius;
  *
  * @param {HTMLElement} element - The element to which the corner border will be added.
  * @param {IShorthandBorderOptions} [borderOptions={}] - Options for the border, including width, color, and style.
+ * @param {string} [className] - Optional class name to apply custom CSS styling to the container.
  * @returns {void} - No return value.
  */
 function addCornerBorder(
   element: HTMLElement,
   borderOptions: IShorthandBorderOptions = {},
+  className?: string,
 ): void {
   const {
     borderWidth = BORDER_SIZE.sm,
@@ -26,7 +28,7 @@ function addCornerBorder(
   } = borderOptions;
   const cornerBorder = `${borderWidth} ${borderColor} ${borderStyle}`;
 
-  const borderContainer = borderContainerElement(element);
+  const borderContainer = borderContainerElement(element, className);
 
   createAndAppendCornerBorder(borderContainer, cornerBorder); // appends all of the side border to the border container element.
 }

@@ -8,6 +8,7 @@ import { validateHTMLElement } from './utils/validatehtmlelement';
  * Add a border that overlap to each other, to an element.
  * @param {HTMLElement} element - The element to add an overlap border to.
  * @param {FullBorderOptions} [borderOptions={}] - The border options (`borderColor`, `borderWidth`, `borderStyle`, etc.).
+ * @param {string} [className] - Optional class name to apply custom CSS styling to the container.
  * @throws {Error} Will throw an error if the first argument is not an HTML element.
  * @returns {void}
  * @example
@@ -23,10 +24,11 @@ import { validateHTMLElement } from './utils/validatehtmlelement';
 function addOverlapBorder(
   element: HTMLElement,
   borderOptions: FullBorderOptions = {},
+  className?: string,
 ): void {
   validateHTMLElement(element);
 
-  const borderContainer = borderContainerElement(element);
+  const borderContainer = borderContainerElement(element, className);
   const outsideBorderElementOffset = '40px';
 
   const {

@@ -16,6 +16,7 @@ interface ISideBlocks extends IPositions {
  * Add a fancy border to an element.
  * @param {HTMLElement} element - The element to add a fancy border to.
  * @param {IShorthandBorderOptions} [borderOptions={}] - The border options (`borderColor`, `borderWidth`, `borderStyle`).
+ * @param {string} [className] - Optional class name to apply custom CSS styling to the container.
  * @throws {Error} Will throw an error if the first argument is not an HTML element.
  * @returns {void}
  * @example
@@ -31,9 +32,10 @@ interface ISideBlocks extends IPositions {
 function addFancyBorder(
   element: HTMLElement,
   borderOptions: IShorthandBorderOptions = {},
+  className?: string,
 ): void {
   validateHTMLElement(element);
-  const borderContainer = borderContainerElement(element);
+  const borderContainer = borderContainerElement(element, className);
   const {
     borderColor = COLOR_THEME.primary,
     borderWidth = BORDER_SIZE.sm,

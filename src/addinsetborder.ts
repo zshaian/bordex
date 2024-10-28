@@ -14,6 +14,7 @@ interface IInsetBorderOptions extends BorderWidthOptional {
  * Add an inset border to an element.
  * @param {HTMLElement} element - The element to add an inset border to.
  * @param {IInsetBorderOptions} [borderOptions={}] - The border options (`borderOffset`, `borderWidth`,`borderStyle`, etc.).
+ * @param {string} [className] - Optional class name to apply custom CSS styling to the container.
  * @throws {Error} Will throw an error if the first argument is not an HTML element.
  * @returns {void}
  * @example
@@ -29,8 +30,9 @@ interface IInsetBorderOptions extends BorderWidthOptional {
 function addInsetBorder(
   element: HTMLElement,
   borderOptions: IInsetBorderOptions = {},
+  className?: string,
 ): void {
-  const borderContainer = borderContainerElement(element);
+  const borderContainer = borderContainerElement(element, className);
 
   const {
     borderOffset = '15px',

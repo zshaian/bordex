@@ -20,6 +20,7 @@ interface IThinBorder {
  * Add a thin border to an element.
  * @param {HTMLElement} element - The element to add the thin border.
  * @param {IThinBorder} [borderOptions={}] - The border options (`color`, `side`, `outset`).
+ * @param {string} [className] - Optional class name to apply custom CSS styling to the container.
  * @throws {Error} Will throw an error if the first argument is not an HTML element, or if one the borderSide is not valid.
  * @returns {void}
  * @example
@@ -35,6 +36,7 @@ interface IThinBorder {
 function addThinBorder(
   element: HTMLElement,
   borderOptions: IThinBorder = {},
+  className?: string,
 ): void {
   const {
     color = COLOR_THEME.secondary, // use the secondary color cause it's more bright.
@@ -58,7 +60,7 @@ function addThinBorder(
     );
   }
 
-  const borderContainer = borderContainerElement(element);
+  const borderContainer = borderContainerElement(element, className);
 
   const isThinBorderOnSide = ['left', 'right', 'horizontal'].includes(side);
   const gradientAngle = isThinBorderOnSide ? 'to bottom' : 'to left';
