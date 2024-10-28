@@ -1,6 +1,5 @@
 import { BorderWidthOptional, CommonBorderStyles } from './types/border.type';
 import { CSSStyles } from './types/styles';
-import { clearElementBackground } from './utils/clearelementbackground';
 import { borderContainerElement } from './utils/createbordercontainer';
 import { BORDER_SIZE } from './utils/defaultstyle';
 import { getComputedStyleValue } from './utils/getcomputedstylevalue';
@@ -134,6 +133,11 @@ function createBackgroundElement(
   borderWidth: string,
 ): HTMLDivElement {
   const elementBgc = element.style.backgroundColor;
+  /*
+   clear the background color of the element,
+    because it is going to get replaced with this element that will act as a background
+  */
+  element.style.backgroundColor = 'transparent';
 
   const elementBackground = document.createElement('div');
   const elementBackgroundStyle: CSSStyles = {
@@ -147,8 +151,6 @@ function createBackgroundElement(
   };
 
   Object.assign(elementBackground.style, elementBackgroundStyle);
-
-  clearElementBackground(element);
 
   return elementBackground;
 }
