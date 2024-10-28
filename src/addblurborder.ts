@@ -28,7 +28,7 @@ function addBlurBorder(
   const { borderColor = COLOR_THEME.primary, borderWidth = '20px' } =
     borderOptions;
   Object.assign(element.style, {
-    boxShadow: `0px 0px 30px ${borderWidth} ${borderColor}`,
+    boxShadow: `inset 0px 0px 30px ${borderWidth} ${borderColor}`,
   });
 }
 
