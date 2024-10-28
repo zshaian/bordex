@@ -1,4 +1,5 @@
 import { FullBorderOptions } from './types/borderstyle';
+import { CSSStyles } from './types/styles';
 import { borderContainerElement } from './utils/createbordercontainer';
 import { BORDER_SIZE, COLOR_THEME } from './utils/defaultstyle';
 import { validateHTMLElement } from './utils/validatehtmlelement';
@@ -70,7 +71,7 @@ function outsideBorderElement(
 ): HTMLDivElement {
   const outsideBorder = document.createElement('div');
 
-  const outsideBorderStyle = {
+  const outsideBorderStyle: CSSStyles = {
     boxSizing: 'content-box',
     border: 'inherit',
     borderRadius: 'inherit',

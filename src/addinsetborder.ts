@@ -1,4 +1,5 @@
 import { BorderWidthOptional, CommonBorderStyles } from './types/borderstyle';
+import { CSSStyles } from './types/styles';
 import { clearElementBackground } from './utils/clearelementbackground';
 import { borderContainerElement } from './utils/createbordercontainer';
 import { BORDER_SIZE } from './utils/defaultstyle';
@@ -83,7 +84,7 @@ function insideBorder(
     'background-color',
   ) as string;
   const insideBorderElement = document.createElement('div');
-  const insideBorderElementStyle = {
+  const insideBorderElementStyle: CSSStyles = {
     height: `calc(100% - ${offset})`,
     width: `calc(100% - ${offset})`,
     borderRadius: 'inherit',
@@ -111,7 +112,7 @@ function outsideBorder(
   */
   const elementBgc = element.style.backgroundColor;
   const outsideBorderElement = document.createElement('div');
-  const outsideBorderElementDesign = {
+  const outsideBorderElementDesign: CSSStyles = {
     height: '100%',
     width: '100%',
     borderRadius: 'inherit',
@@ -133,7 +134,7 @@ function createBackgroundElement(
   const elementBgc = element.style.backgroundColor;
 
   const elementBackground = document.createElement('div');
-  const elementBackgroundStyle = {
+  const elementBackgroundStyle: CSSStyles = {
     height: '100%',
     width: '100%',
     inset: `${borderWidth}`,

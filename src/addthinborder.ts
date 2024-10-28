@@ -1,3 +1,4 @@
+import { CSSStyles } from './types/styles';
 import { borderContainerElement } from './utils/createbordercontainer';
 import { COLOR_THEME } from './utils/defaultstyle';
 
@@ -68,7 +69,7 @@ function addThinBorder(
   const computedBorderOutset = `${isThinBorderOnSide ? `0 ${outset}` : `${outset} 0`}`;
   const borderImageSlice = getBorderImageSlice(side);
 
-  const thinBorderStyle = {
+  const thinBorderStyle: CSSStyles = {
     borderImageSource: `linear-gradient(${gradientAngle},rgba(0,0,0,0) 1%, ${color} 50%, rgba(0,0,0,0) 99%)`,
     borderImageOutset: computedBorderOutset,
     borderImageWidth: '1.5px', // width of the border, maybe adjust it later if it's too thin.

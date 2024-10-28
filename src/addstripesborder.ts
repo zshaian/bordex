@@ -1,4 +1,5 @@
 import { BorderWidthOptional } from './types/borderstyle';
+import { CSSStyles } from './types/styles';
 import { borderContainerElement } from './utils/createbordercontainer';
 import { BORDER_SIZE, COLOR_THEME } from './utils/defaultstyle';
 import { insertAfterElement } from './utils/insertafterelement';
@@ -57,7 +58,7 @@ function stripeBorderElement(
 
   const stripeGradientString = createGradientString(defaultStripeWidth, colors);
 
-  const stripeBorderStyle = {
+  const stripeBorderStyle: CSSStyles = {
     position: 'absolute',
     inset: `-${borderTopWidth} -${borderLeftWidth} -${borderBottomWidth} -${borderRightWidth}`,
     borderRadius: 'inherit',

@@ -1,4 +1,5 @@
 import { IPositions, IShorthandBorderOptions } from './types/borderstyle';
+import { CSSStyles } from './types/styles';
 import { borderContainerElement } from './utils/createbordercontainer';
 import { BORDER_SIZE, COLOR_THEME } from './utils/defaultstyle';
 import { validateHTMLElement } from './utils/validatehtmlelement';
@@ -58,7 +59,7 @@ function outsetBorder(elementBorderWidth: string): HTMLDivElement {
   const outsetBorderElement = document.createElement('div');
   const outerElementOffset = '20px';
   const outsetBorderElementSize = `calc(0px - (${outerElementOffset} + ${elementBorderWidth}))`;
-  const outsetBorderElementStyle = {
+  const outsetBorderElementStyle: CSSStyles = {
     boxSizing: 'inherit',
     border: 'inherit',
     borderRadius: 'inherit',
@@ -118,7 +119,7 @@ function createSideBlockBorder(
 ): HTMLDivElement {
   const sideBlockElement = document.createElement('div');
   const blockSize = '10px';
-  const boxElementStyle = {
+  const boxElementStyle: CSSStyles = {
     height: blockSize,
     width: blockSize,
     boxSizing: 'inherit',

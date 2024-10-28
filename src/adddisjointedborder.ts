@@ -1,5 +1,6 @@
 import { COLOR_THEME } from './utils/defaultstyle';
 import { borderContainerElement } from './utils/createbordercontainer';
+import { CSSStyles } from './types/styles';
 
 interface IDisjointedBorderOptions {
   angle?: string;
@@ -37,7 +38,7 @@ function disjointedBorder(
   const borderOffset = '0.1rem';
   const { angle = '45deg', borderColor = COLOR_THEME.primary } = borderOptions;
   const borderElement = document.createElement('div');
-  const borderElementDesign = {
+  const borderElementDesign: CSSStyles = {
     background: `linear-gradient(${angle},#00000000 1%,${borderColor} 50%,#00000000 99%)`,
     position: 'absolute',
     inset: `-${borderOffset}`,

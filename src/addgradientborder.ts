@@ -1,4 +1,5 @@
 import { BorderWidthOptional } from './types/borderstyle';
+import { CSSStyles } from './types/styles';
 import { borderContainerElement } from './utils/createbordercontainer';
 import { BORDER_SIZE, COLOR_THEME } from './utils/defaultstyle';
 import { getComputedStyleValue } from './utils/getcomputedstylevalue';
@@ -55,7 +56,7 @@ function gradientBorder(
     ...borderWidths
   } = borderOptions;
 
-  const gradientBorderStyle = {
+  const gradientBorderStyle: CSSStyles = {
     background: `linear-gradient(${elementBackground},${elementBackground}) padding-box, linear-gradient(${angle},${colors.join(',')}) border-box`,
     borderStyle: 'solid',
     borderColor: 'transparent',

@@ -6,6 +6,7 @@ import {
 import { borderContainerElement } from './utils/createbordercontainer';
 import { BORDER_SIZE, COLOR_THEME } from './utils/defaultstyle';
 import { capitalizeFirstLetter } from './utils/capitalizefirstletter';
+import { CSSStyles } from './types/styles';
 
 interface IBorderRadius {
   borderTopLeftRadius?: string;
@@ -99,7 +100,7 @@ function createCornerBorder(
   cornerBorderOptions: ICornerBorderOptions,
 ): HTMLDivElement {
   const cornerBorder = document.createElement('div');
-  const borderBlockStyle = {
+  const borderBlockStyle: CSSStyles = {
     height: '40%',
     width: '20%',
     position: 'absolute',
