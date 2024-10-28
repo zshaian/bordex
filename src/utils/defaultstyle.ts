@@ -12,24 +12,4 @@ const BORDER_SIZE = {
   lg: '20px',
 } as const;
 
-/**
- * Sets a default position of `relative` to an element if its position is currently set to `static`.
- * @param {HTMLElement} element - The element for which to set a default position.
- * @returns {void} No return value.
- * @example
- * const element = document.getElementById('element');
- *
- * // Sets the default position to 'relative' if the element's position is 'static'
- * setElementDefaultPosition(element);
- */
-
-const setElementDefaultPosition = (element: HTMLElement): void => {
-  const elementPosition = window
-    .getComputedStyle(element)
-    .getPropertyValue('position');
-  if (elementPosition === 'static') {
-    element.style.position = 'relative';
-  }
-};
-
-export { setElementDefaultPosition, COLOR_THEME, BORDER_SIZE };
+export { COLOR_THEME, BORDER_SIZE };
