@@ -1,9 +1,8 @@
 import { BorderWidthOptional, CommonBorderStyles } from './types/borderstyle';
+import { clearElementBackground } from './utils/clearelementbackground';
 import { borderContainerElement } from './utils/createbordercontainer';
 import { BORDER_SIZE } from './utils/defaultstyle';
 import { getComputedStyleValue } from './utils/getcomputedstylevalue';
-import { insertAfterElement } from './utils/insertafterelement';
-import { validateHTMLElement } from './utils/validatehtmlelement';
 
 interface IInsetBorderOptions extends BorderWidthOptional {
   borderOffset?: string;
@@ -30,30 +29,44 @@ function addInsetBorder(
   element: HTMLElement,
   borderOptions: IInsetBorderOptions = {},
 ): void {
-  validateHTMLElement(element);
+  const borderContainer = borderContainerElement(element);
+
   const {
     borderOffset = '15px',
     borderWidth = BORDER_SIZE.sm,
     borderStyle = 'solid',
   } = borderOptions;
 
-  const borderContainer = borderContainerElement(element);
   const borderContainerStyle = {
     borderWidth,
     borderStyle,
     borderColor: 'transparent',
   };
 
-  const insideBorderElement = insideBorder(borderOffset, borderWidth, element);
+  const insideBorderElement = insideBorder(
+    borderOffset,
+    borderWidth,
+    borderContainer,
+  );
+
   const outsideBordElement = outsideBorder(
     borderOffset,
     borderWidth,
     borderContainer,
   );
 
+  const elementBackground = createBackgroundElement(
+    borderContainer,
+    borderWidth,
+  );
+
   Object.assign(borderContainer.style, borderContainerStyle);
-  insertAfterElement(element, borderContainer);
-  borderContainer.append(element, insideBorderElement, outsideBordElement);
+
+  borderContainer.append(
+    insideBorderElement,
+    outsideBordElement,
+    elementBackground,
+  );
 }
 
 function insideBorder(
@@ -111,6 +124,30 @@ function outsideBorder(
   };
   Object.assign(outsideBorderElement.style, outsideBorderElementDesign);
   return outsideBorderElement;
+}
+
+function createBackgroundElement(
+  element: HTMLElement,
+  borderWidth: string,
+): HTMLDivElement {
+  const elementBgc = element.style.backgroundColor;
+
+  const elementBackground = document.createElement('div');
+  const elementBackgroundStyle = {
+    height: '100%',
+    width: '100%',
+    inset: `${borderWidth}`,
+    borderRadius: 'inherit',
+    backgroundColor: `${elementBgc}`,
+    position: 'absolute',
+    zIndex: '-3',
+  };
+
+  Object.assign(elementBackground.style, elementBackgroundStyle);
+
+  clearElementBackground(element);
+
+  return elementBackground;
 }
 
 export { addInsetBorder };
