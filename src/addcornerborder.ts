@@ -2,7 +2,7 @@ import {
   IShorthandBorder,
   IShorthandBorderOptions,
   IPositions,
-} from './types/borderstyle';
+} from './types/border.type';
 import { borderContainerElement } from './utils/createbordercontainer';
 import { BORDER_SIZE, COLOR_THEME } from './utils/defaultstyle';
 import { capitalizeFirstLetter } from './utils/capitalizefirstletter';

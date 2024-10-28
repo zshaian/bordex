@@ -2,7 +2,7 @@ import {
   BorderOptionsOptional,
   CommonBorderStyles,
   borderStyles,
-} from './types/borderstyle';
+} from './types/border.type';
 import { BORDER_SIZE, COLOR_THEME } from './utils/defaultstyle';
 import { validateHTMLElement } from './utils/validatehtmlelement';
 

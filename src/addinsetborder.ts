@@ -1,4 +1,4 @@
-import { BorderWidthOptional, CommonBorderStyles } from './types/borderstyle';
+import { BorderWidthOptional, CommonBorderStyles } from './types/border.type';
 import { CSSStyles } from './types/styles';
 import { clearElementBackground } from './utils/clearelementbackground';
 import { borderContainerElement } from './utils/createbordercontainer';
