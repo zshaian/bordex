@@ -1,4 +1,5 @@
-import { IPositions, IShorthandBorderOptions } from './types/border.type';
+import { IShorthandBorderOptions } from './types/border.type';
+import { IPositions } from './types/position.type';
 import { CSSStyles } from './types/styles';
 import { borderContainerElement } from './utils/createbordercontainer';
 import { BORDER_SIZE, COLOR_THEME } from './utils/defaultstyle';

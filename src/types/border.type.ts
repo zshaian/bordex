@@ -48,13 +48,6 @@ interface IShorthandBorder {
   borderBottom?: string;
 }
 
-interface IPositions {
-  left?: string;
-  right?: string;
-  top?: string;
-  bottom?: string;
-}
-
 type BorderColorOptional = Partial<IBorderColor>;
 type BorderWidthOptional = Partial<IBorderWidth>;
 type BorderStyleOptional = Partial<IBorderStyle>;
@@ -78,5 +71,4 @@ export {
   CommonBorderStyles,
   FullBorderOptions,
   borderStyles,
-  IPositions,
 };
