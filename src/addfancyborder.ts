@@ -1,7 +1,6 @@
 import { IPositions, IShorthandBorderOptions } from './types/borderstyle';
 import { borderContainerElement } from './utils/createbordercontainer';
 import { BORDER_SIZE, COLOR_THEME } from './utils/defaultstyle';
-import { insertAfterElement } from './utils/insertafterelement';
 import { validateHTMLElement } from './utils/validatehtmlelement';
 
 interface ISideBlocks extends IPositions {
@@ -46,9 +45,8 @@ function addFancyBorder(
     boxSizing: 'content-box',
   });
 
-  insertAfterElement(element, borderContainer);
   createAndAppendSideBlockBorders(borderContainer);
-  borderContainer.append(element, outsetBorder(borderWidth));
+  borderContainer.append(outsetBorder(borderWidth));
 }
 
 /**

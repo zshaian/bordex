@@ -1,7 +1,5 @@
 import { COLOR_THEME } from './utils/defaultstyle';
 import { borderContainerElement } from './utils/createbordercontainer';
-import { validateHTMLElement } from './utils/validatehtmlelement';
-import { insertAfterElement } from './utils/insertafterelement';
 
 interface IDisjointedBorderOptions {
   angle?: string;
@@ -28,12 +26,9 @@ function addDisjointedBorder(
   element: HTMLElement,
   borderOptions: IDisjointedBorderOptions = {},
 ): void {
-  validateHTMLElement(element);
   const borderContainer = borderContainerElement(element);
 
-  // append the the disjointedBorder element that's going to act as a bordrer to the borderContainer element
-  insertAfterElement(element, borderContainer);
-  borderContainer.append(element, disjointedBorder(borderOptions));
+  borderContainer.append(disjointedBorder(borderOptions));
 }
 
 function disjointedBorder(

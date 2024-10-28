@@ -5,7 +5,6 @@ import {
 } from './types/borderstyle';
 import { borderContainerElement } from './utils/createbordercontainer';
 import { BORDER_SIZE, COLOR_THEME } from './utils/defaultstyle';
-import { insertAfterElement } from './utils/insertafterelement';
 import { capitalizeFirstLetter } from './utils/capitalizefirstletter';
 
 interface IBorderRadius {
@@ -37,9 +36,7 @@ function addCornerBorder(
 
   const borderContainer = borderContainerElement(element);
 
-  insertAfterElement(element, borderContainer);
   createAndAppendCornerBorder(borderContainer, cornerBorder); // appends all of the side border to the border container element.
-  borderContainer.append(element);
 }
 
 /**

@@ -32,8 +32,7 @@ function addStripeBorder(
   const borderContainer = borderContainerElement(element);
   const stripeBorder = stripeBorderElement(borderOptions);
 
-  insertAfterElement(element, borderContainer);
-  borderContainer.append(element, stripeBorder);
+  borderContainer.append(stripeBorder);
 }
 
 /**

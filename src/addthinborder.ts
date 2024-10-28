@@ -1,5 +1,5 @@
+import { borderContainerElement } from './utils/createbordercontainer';
 import { COLOR_THEME } from './utils/defaultstyle';
-import { validateHTMLElement } from './utils/validatehtmlelement';
 
 type ThinBorderSides =
   | 'top'
@@ -35,8 +35,6 @@ function addThinBorder(
   element: HTMLElement,
   borderOptions: IThinBorder = {},
 ): void {
-  validateHTMLElement(element);
-
   const {
     color = COLOR_THEME.secondary, // use the secondary color cause it's more bright.
     side = 'left',
@@ -59,6 +57,8 @@ function addThinBorder(
     );
   }
 
+  const borderContainer = borderContainerElement(element);
+
   const isThinBorderOnSide = ['left', 'right', 'horizontal'].includes(side);
   const gradientAngle = isThinBorderOnSide ? 'to bottom' : 'to left';
   /*
@@ -75,7 +75,7 @@ function addThinBorder(
     borderImageSlice,
   };
 
-  Object.assign(element.style, thinBorderStyle);
+  Object.assign(borderContainer.style, thinBorderStyle);
 }
 
 /**

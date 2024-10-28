@@ -1,7 +1,7 @@
 import { BorderWidthOptional } from './types/borderstyle';
+import { borderContainerElement } from './utils/createbordercontainer';
 import { BORDER_SIZE, COLOR_THEME } from './utils/defaultstyle';
 import { getComputedStyleValue } from './utils/getcomputedstylevalue';
-import { validateHTMLElement } from './utils/validatehtmlelement';
 
 interface IGradientBorderOptions extends BorderWidthOptional {
   angle?: string;
@@ -29,15 +29,16 @@ function addGradientBorder(
   element: HTMLElement,
   borderOptions: IGradientBorderOptions = {},
 ): void {
-  validateHTMLElement(element);
-  const elementBackground = getComputedStyleValue(
-    element,
+  const borderContainer = borderContainerElement(element);
+
+  const borderContainerBackground = getComputedStyleValue(
+    borderContainer,
     'background-color',
   ) as string;
 
   Object.assign(
-    element.style,
-    gradientBorder(elementBackground, borderOptions),
+    borderContainer.style,
+    gradientBorder(borderContainerBackground, borderOptions),
   );
 }
 
