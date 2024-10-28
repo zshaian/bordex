@@ -1,60 +1,40 @@
-import { clearElementBackground } from './clearelementbackground';
-import { copySourceBackground } from './copybaseelementbackground';
-import { getComputedStyleValue } from './getcomputedstylevalue';
-import { getElementPosition } from './getelementposition';
+import { insertAfterElement } from './insertafterelement';
+import { validateHTMLElement } from './validatehtmlelement';
 
 /**
- * Creates a new `div` element that acts as a border container for the provided element.
- * The newly created `div` will have styles such as `width`, `borderRadius`, and `position`
- * derived from the provided element's computed styles.
+ * Wraps the specified HTML element in a `div` that acts as a styled container.
  *
- * @param {HTMLElement} element - The HTML element for which to create a border container.
- * @returns {HTMLDivElement} The newly created `div` element styled as a border container.
- *
+ * @param {HTMLElement} element - The HTML element to be wrapped.
+ * @param {string} [className] - Optional class name to apply custom CSS styling to the container.
+ * @throws {Error} Throws an error if the provided `element` is not a valid HTML element.
+ * @returns {HTMLDivElement} The newly created `div` element styled as a container.
  * @example
  * const element = document.getElementById('element');
- * const borderContainer = borderContainerElement(element);
- *
+ * const borderContainer = borderContainerElement(element, 'my-custom-class');
  * document.body.appendChild(borderContainer);
  */
-function borderContainerElement(element: HTMLElement): HTMLDivElement {
-  const borderContainerElement = document.createElement('div');
+function borderContainerElement(
+  element: HTMLElement,
+  className?: string,
+): HTMLDivElement {
+  validateHTMLElement(element);
 
-  const borderContainerElementStyle = {
-    // FIXME: Find a way to set the right width to the border container instead of just setting it to max-content
-    width: 'max-content',
-    borderRadius: getComputedStyleValue(element, 'border-radius'),
-    position: getElementPosition(element),
-    zIndex: getComputedStyleValue(element, 'z-index'),
+  const borderContainer = document.createElement('div');
+
+  const borderContainerStyle: Partial<CSSStyleDeclaration> = {
+    color: 'white',
+    background: 'black',
+    position: 'relative', // needed for absolue child positioning
   };
 
-  resetCopiedElementStyles(element, borderContainerElement);
+  borderContainer.setAttribute('class', className || '');
 
-  Object.assign(borderContainerElement.style, borderContainerElementStyle);
+  Object.assign(borderContainer.style, borderContainerStyle);
 
-  return borderContainerElement;
-}
+  insertAfterElement(element, borderContainer);
+  borderContainer.append(element);
 
-/**
- * Resets the styles of the element and copies specific styles (like background) into the baseElement.
- * Specifically, it resets the position and z-index to prevent conflict with the base element,
- * then copies and clears the background.
- *
- * @param {HTMLElement} element - The element whose styles will be reset.
- * @param {HTMLElement} baseElement - The element that will receive the background style from `element`.
- * @returns {void} - No return value.
- */
-function resetCopiedElementStyles(
-  element: HTMLElement,
-  baseElement: HTMLElement,
-): void {
-  // Reset position and z-index to avoid style conflict with baseElement
-  element.style.position = 'relative';
-  element.style.zIndex = 'auto';
-
-  // Copy background from element to baseElement, then clear element background
-  copySourceBackground(element, baseElement);
-  clearElementBackground(element);
+  return borderContainer;
 }
 
 export { borderContainerElement };
