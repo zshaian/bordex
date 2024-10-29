@@ -45,6 +45,15 @@ function addInsetBorder(
     borderColor: 'transparent',
   };
 
+  /* ISSUE: if there's no specific background-color set to an element this is going to return a transparent color,
+     causing the outisdeBorderElement to also have a transparent color, also if the parent of the element have a 
+     background image set to them it's not going to get apply to the border.
+  */
+  const borderContainerBg = getComputedStyleValue(
+    borderContainer,
+    'background-color',
+  ) as string;
+
   const insideBorderElement = insideBorder(
     borderOffset,
     borderWidth,
@@ -54,11 +63,12 @@ function addInsetBorder(
   const outsideBordElement = outsideBorder(
     borderOffset,
     borderWidth,
-    borderContainer,
+    borderContainerBg,
   );
 
   const elementBackground = createBackgroundElement(
     borderContainer,
+    borderContainerBg,
     borderWidth,
   );
 
@@ -80,7 +90,7 @@ function insideBorder(
      causing the insideBorderElement to also have a transparent color, also if the element  have a background image
      set to them it's not going to get apply to the border.
   */
-  const elementParentBgc = getComputedStyleValue(
+  const elementParentBg = getComputedStyleValue(
     element.parentElement as HTMLElement,
     'background-color',
   ) as string;
@@ -91,8 +101,8 @@ function insideBorder(
     borderRadius: 'inherit',
     borderTop: 'inherit',
     borderLeft: 'inherit',
-    borderTopColor: `${elementParentBgc}`,
-    borderLeftColor: `${elementParentBgc}`,
+    borderTopColor: `${elementParentBg}`,
+    borderLeftColor: `${elementParentBg}`,
     position: 'absolute',
     left: `calc(${offset} + ${borderWidth})`,
     top: `calc(${offset} + ${borderWidth})`,
@@ -105,20 +115,15 @@ function insideBorder(
 function outsideBorder(
   offset: string,
   borderWidth: string,
-  element: HTMLElement,
+  elementBg: string,
 ): HTMLDivElement {
-  /* ISSUE: if there's no specific background-color set to an element this is going to return a transparent color,
-     causing the outisdeBorderElement to also have a transparent color, also if the parent of the element have a 
-     background image set to them it's not going to get apply to the border.
-  */
-  const elementBgc = element.style.backgroundColor;
   const outsideBorderElement = document.createElement('div');
   const outsideBorderElementDesign: CSSStyles = {
     height: '100%',
     width: '100%',
     borderRadius: 'inherit',
     border: 'inherit',
-    borderColor: `${elementBgc}`,
+    borderColor: `${elementBg}`,
     position: 'absolute',
     left: `calc(${offset} + ${borderWidth})`,
     top: `calc(${offset} + ${borderWidth})`,
@@ -130,9 +135,9 @@ function outsideBorder(
 
 function createBackgroundElement(
   element: HTMLElement,
+  elementBg: string,
   borderWidth: string,
 ): HTMLDivElement {
-  const elementBgc = element.style.backgroundColor;
   /*
    clear the background color of the element,
     because it is going to get replaced with this element that will act as a background
@@ -145,7 +150,7 @@ function createBackgroundElement(
     width: '100%',
     inset: `${borderWidth}`,
     borderRadius: 'inherit',
-    backgroundColor: `${elementBgc}`,
+    backgroundColor: `${elementBg}`,
     position: 'absolute',
     zIndex: '-3',
   };
