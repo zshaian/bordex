@@ -14,7 +14,7 @@ function getElementPosition(element: HTMLElement): ElementPosition {
     'position',
   ) as ElementPosition;
 
-  return elementPosition === 'static' ? 'relative' : elementPosition;
+  return elementPosition;
 }
 
 export { getElementPosition };
