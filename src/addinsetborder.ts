@@ -1,5 +1,5 @@
 import { BorderWidthOptional, CommonBorderStyles } from './types/border.type';
-import { CSSStyles } from './types/styles';
+import { CSSStyles } from './types/styles.type';
 import { borderContainerElement } from './utils/createbordercontainer';
 import { BORDER_SIZE } from './utils/defaultstyle';
 import { getComputedStyleValue } from './utils/getcomputedstylevalue';

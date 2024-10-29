@@ -1,4 +1,4 @@
-import { CSSStyles } from '../types/styles';
+import { CSSStyles } from '../types/styles.type';
 import { getComputedStyleValue } from './getcomputedstylevalue';
 import { insertAfterElement } from './insertafterelement';
 import { validateHTMLElement } from './validatehtmlelement';

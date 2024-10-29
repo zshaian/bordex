@@ -1,4 +1,4 @@
-import { CSSStyles } from './types/styles';
+import { CSSStyles } from './types/styles.type';
 import { borderContainerElement } from './utils/createbordercontainer';
 import { COLOR_THEME } from './utils/defaultstyle';
 

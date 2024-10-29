@@ -1,6 +1,6 @@
 import { COLOR_THEME } from './utils/defaultstyle';
 import { borderContainerElement } from './utils/createbordercontainer';
-import { CSSStyles } from './types/styles';
+import { CSSStyles } from './types/styles.type';
 
 interface IDisjointedBorderOptions {
   angle?: string;

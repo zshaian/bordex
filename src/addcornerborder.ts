@@ -4,7 +4,7 @@ import { IBorderRadius } from './types/borderradius.type';
 import { borderContainerElement } from './utils/createbordercontainer';
 import { BORDER_SIZE, COLOR_THEME } from './utils/defaultstyle';
 import { capitalizeFirstLetter } from './utils/capitalizefirstletter';
-import { CSSStyles } from './types/styles';
+import { CSSStyles } from './types/styles.type';
 
 type ICornerBorderOptions = IShorthandBorder & IPositions & IBorderRadius;
 
