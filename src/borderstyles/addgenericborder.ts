@@ -2,9 +2,9 @@ import {
   BorderOptionsOptional,
   CommonBorderStyles,
   borderStyles,
-} from './types/border.type';
-import { BORDER_SIZE, COLOR_THEME } from './utils/defaultstyle';
-import { validateHTMLElement } from './utils/validatehtmlelement';
+} from '../types/border.type';
+import { BORDER_SIZE, COLOR_THEME } from '../utils/defaultstyle';
+import { validateHTMLElement } from '../utils/validatehtmlelement';
 
 /** add a generic pre styled border to an element
  * @param {HTMLElement} element - The element to add a border

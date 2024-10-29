@@ -1,5 +1,5 @@
-import { COLOR_THEME } from './utils/defaultstyle';
-import { validateHTMLElement } from './utils/validatehtmlelement';
+import { COLOR_THEME } from '../utils/defaultstyle';
+import { validateHTMLElement } from '../utils/validatehtmlelement';
 
 interface IBlurBorderOptions {
   borderColor?: string;

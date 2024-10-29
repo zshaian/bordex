@@ -1,10 +1,13 @@
-import { IShorthandBorder, IShorthandBorderOptions } from './types/border.type';
-import { IPositions } from './types/position.type';
-import { IBorderRadius } from './types/borderradius.type';
-import { borderContainerElement } from './utils/createbordercontainer';
-import { BORDER_SIZE, COLOR_THEME } from './utils/defaultstyle';
-import { capitalizeFirstLetter } from './utils/capitalizefirstletter';
-import { CSSStyles } from './types/styles.type';
+import {
+  IShorthandBorder,
+  IShorthandBorderOptions,
+} from '../types/border.type';
+import { IPositions } from '../types/position.type';
+import { IBorderRadius } from '../types/borderradius.type';
+import { borderContainerElement } from '../utils/createbordercontainer';
+import { BORDER_SIZE, COLOR_THEME } from '../utils/defaultstyle';
+import { capitalizeFirstLetter } from '../utils/capitalizefirstletter';
+import { CSSStyles } from '../types/styles.type';
 
 type ICornerBorderOptions = IShorthandBorder & IPositions & IBorderRadius;
 
