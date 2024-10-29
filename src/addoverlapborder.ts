@@ -10,7 +10,8 @@ import { validateHTMLElement } from './utils/validatehtmlelement';
  * @param {FullBorderOptions} [borderOptions={}] - The border options (`borderColor`, `borderWidth`, `borderStyle`, etc.).
  * @param {string} [className] - Optional class name to apply custom CSS styling to the container.
  * @throws {Error} Will throw an error if the first argument is not an HTML element.
- * @returns {void}
+ * @returns {HTMLDivElement} The container element wrapping the original element with the corner border applied.
+ *
  * @example
  * const element = document.getElementById('element');
  * const anotherElement = document.getElementById('anotherElement');
@@ -25,7 +26,7 @@ function addOverlapBorder(
   element: HTMLElement,
   borderOptions: FullBorderOptions = {},
   className?: string,
-): void {
+): HTMLDivElement {
   validateHTMLElement(element);
 
   const borderContainer = borderContainerElement(element, className);
@@ -64,6 +65,8 @@ function addOverlapBorder(
       horizontalBorderWidth,
     ),
   );
+
+  return borderContainer;
 }
 
 function outsideBorderElement(

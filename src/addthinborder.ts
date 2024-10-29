@@ -22,7 +22,8 @@ interface IThinBorder {
  * @param {IThinBorder} [borderOptions={}] - The border options (`color`, `side`, `outset`).
  * @param {string} [className] - Optional class name to apply custom CSS styling to the container.
  * @throws {Error} Will throw an error if the first argument is not an HTML element, or if one the borderSide is not valid.
- * @returns {void}
+ * @returns {HTMLDivElement} The container element wrapping the original element with the corner border applied.
+ *
  * @example
  * const element = document.getElementById('element');
  * const anotherElement = document.getElementById('anotherElement');
@@ -37,7 +38,7 @@ function addThinBorder(
   element: HTMLElement,
   borderOptions: IThinBorder = {},
   className?: string,
-): void {
+): HTMLDivElement {
   const {
     color = COLOR_THEME.secondary, // use the secondary color cause it's more bright.
     side = 'left',
@@ -79,6 +80,8 @@ function addThinBorder(
   };
 
   Object.assign(borderContainer.style, thinBorderStyle);
+
+  return borderContainer;
 }
 
 /**

@@ -9,7 +9,8 @@ interface IBlurBorderOptions {
  * add a blur border style to an element
  * @param {HTMLElement} element - The element to add the blur border
  * @param {IBlurBorderOptions} [borderOptions = {}] - Optional design properties like borderColor or borderWidth (optional, defaults to `{}`)
- * @returns {void} No return value.
+ * @returns {HTMLElement} The Element with the applied blur border.
+ *
  * @example
  * const element = document.getElementById('element');
  * const anotherElement = document.getElementById('anotherElement');
@@ -23,13 +24,15 @@ interface IBlurBorderOptions {
 function addBlurBorder(
   element: HTMLElement,
   borderOptions: IBlurBorderOptions = {},
-): void {
+): HTMLElement {
   validateHTMLElement(element);
   const { borderColor = COLOR_THEME.primary, borderWidth = '20px' } =
     borderOptions;
   Object.assign(element.style, {
     boxShadow: `inset 0px 0px 30px ${borderWidth} ${borderColor}`,
   });
+
+  return element;
 }
 
 export { addBlurBorder };

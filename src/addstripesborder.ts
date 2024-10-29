@@ -14,7 +14,8 @@ interface IStripeBorderOptions extends BorderWidthOptional {
  * @param {HTMLElement} element - The element to add the striped border to.
  * @param {IStripeBorderOptions} borderOptions - Optional border settings, including color, width, and stripe width.
  * @param {string} [className] - Optional class name to apply custom CSS styling to the container.
- * @returns {void} No return value.
+ * @returns {HTMLDivElement} The container element wrapping the original element with the corner border applied.
+ *
  * @example
  * const element = document.getElementById('element');
  * const anotherElement = document.getElementById('anotherElement');
@@ -30,11 +31,13 @@ function addStripeBorder(
   element: HTMLElement,
   borderOptions: IStripeBorderOptions = {},
   className?: string,
-): void {
+): HTMLDivElement {
   const borderContainer = borderContainerElement(element, className);
   const stripeBorder = stripeBorderElement(borderOptions);
 
   borderContainer.append(stripeBorder);
+
+  return borderContainer;
 }
 
 /**

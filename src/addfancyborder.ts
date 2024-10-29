@@ -18,7 +18,8 @@ interface ISideBlocks extends IPositions {
  * @param {IShorthandBorderOptions} [borderOptions={}] - The border options (`borderColor`, `borderWidth`, `borderStyle`).
  * @param {string} [className] - Optional class name to apply custom CSS styling to the container.
  * @throws {Error} Will throw an error if the first argument is not an HTML element.
- * @returns {void}
+ * @returns {HTMLDivElement} The container element wrapping the original element with the fancy border applied.
+ *
  * @example
  * const element = document.getElementById('element');
  * const anotherElement = document.getElementById('anotherElement');
@@ -33,7 +34,7 @@ function addFancyBorder(
   element: HTMLElement,
   borderOptions: IShorthandBorderOptions = {},
   className?: string,
-): void {
+): HTMLDivElement {
   validateHTMLElement(element);
   const borderContainer = borderContainerElement(element, className);
   const {
@@ -51,6 +52,8 @@ function addFancyBorder(
 
   createAndAppendSideBlockBorders(borderContainer);
   borderContainer.append(outsetBorder(borderWidth));
+
+  return borderContainer;
 }
 
 /**

@@ -10,7 +10,8 @@ import { validateHTMLElement } from './utils/validatehtmlelement';
  * @param {HTMLElement} element - The element to add a border
  * @param {CommonBorderStyles} borderStyle - The style of the border (e.g. "solid", "double", "dotted", etc.)
  * @param {BorderOptionsOptional} [borderOptions = {}] - Optional design properties like borderColor or borderWidth (optional, defaults to `{}`)
- * @returns {void} No return value.
+ * @returns {HTMLElement} The Element with the applied blur border.
+ *
  * @example
  * const element = document.getElementById('element');
  * const anotherElement = document.getElementById('anotherElement');
@@ -26,7 +27,7 @@ function addGenericBorder(
   element: HTMLElement,
   borderStyle: CommonBorderStyles,
   borderOptions: BorderOptionsOptional = {},
-): void {
+): HTMLElement {
   validateHTMLElement(element);
   if (!borderStyles.includes(borderStyle)) {
     throw new Error(
@@ -41,7 +42,7 @@ function addGenericBorder(
     ...borderOptions,
   });
 
-  return;
+  return element;
 }
 
 export { addGenericBorder };
