@@ -1,0 +1,45 @@
+# Ignore configuration files
+.gitignore
+.eslintignore
+.prettierrc
+.prettierignore
+commitlint.config.js
+.husky
+tsconfig.json
+
+# Ignore examples folder
+examples/
+
+# Ignore source files
+src/
+
+# Ignore tests (if you have them)
+__tests__/
+tests/
+
+# Ignore build artifacts
+dist/**/*.map
+dist/**/*.js
+dist/**/*.js.map
+parcel-cache/
+node_modules/
+
+# Ignore local development scripts
+scripts/
+
+# Ignore environment variables
+.env
+.env.local
+.env.development
+.env.production
+
+# Ignore logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Ignore IDE/editor specific files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
