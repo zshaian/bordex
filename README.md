@@ -1,6 +1,10 @@
-# Bordex
+<div align="center">
+  <img src="https://i.imgur.com/CZQVDsi.png" alt="bordex icon">
 
-A Javascript library for adding pre-styled borders for HTML elements.
+  <h1>Bordex</h1>
+
+  A Javascript library for adding pre-styled borders for HTML elements.
+</div>
 
 ## Table of Contents
 
