@@ -1,5 +1,4 @@
-import { FullBorderOptions } from '../types/border.type';
-import { CSSStyles } from '../types/styles.type';
+import { FullBorderOptions, CSSStyles } from '../types';
 import {
   borderContainerElement,
   BORDER_SIZE,

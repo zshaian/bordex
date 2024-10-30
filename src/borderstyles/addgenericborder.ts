@@ -2,7 +2,7 @@ import {
   BorderOptionsOptional,
   CommonBorderStyles,
   borderStyles,
-} from '../types/border.type';
+} from '../types';
 import { BORDER_SIZE, COLOR_THEME, validateHTMLElement } from '../utils';
 
 /** add a generic pre styled border to an element

@@ -1,10 +1,10 @@
 import {
   IShorthandBorder,
   IShorthandBorderOptions,
-} from '../types/border.type';
-import { IPositions } from '../types/position.type';
-import { IBorderRadius } from '../types/borderradius.type';
-import { CSSStyles } from '../types/styles.type';
+  IPositions,
+  IBorderRadius,
+  CSSStyles,
+} from '../types';
 import {
   borderContainerElement,
   BORDER_SIZE,

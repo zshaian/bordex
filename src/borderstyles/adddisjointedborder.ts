@@ -1,4 +1,4 @@
-import { CSSStyles } from '../types/styles.type';
+import { CSSStyles } from '../types';
 import { borderContainerElement, COLOR_THEME } from '../utils';
 
 interface IDisjointedBorderOptions {
