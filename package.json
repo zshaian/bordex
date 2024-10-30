@@ -1,11 +1,16 @@
 {
   "name": "bordex",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "source": "src/index.ts",
   "main": "dist/index.js",
   "module": "dist/index.module.js",
-  "types:": "dist/index.d.ts",
+  "types": "dist/index.d.ts",
   "type": "module",
+  "files": [
+    "dist/",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
