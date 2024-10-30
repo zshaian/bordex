@@ -3,6 +3,7 @@
   "compilerOptions": {
     "target": "ES6",                                 // Sets the target ECMAScript version
     "module": "ESNext",                            // Specifies the module system
+    "declaration": true,
     "lib": ["DOM","ES7"],
     "strict": true,                                  // Enables all strict type-checking options
     "esModuleInterop": true,                         // Ensures compatibility with ES6 module imports/exports
