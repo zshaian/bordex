@@ -69,7 +69,7 @@ Check out the [Example Borders](#) for more detailed usage and demos.
 
 ## Contributing
 
-Contributions are welcome! Please read the [CONTRIBUING.md]() for guidelines on how to conribute to this project.
+Contributions are welcome! Please read the [CONTRIBUING.md](./CONTRIBUTING.md ) for guidelines on how to conribute to this project.
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
