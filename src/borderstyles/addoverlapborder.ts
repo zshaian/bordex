@@ -1,8 +1,11 @@
 import { FullBorderOptions } from '../types/border.type';
 import { CSSStyles } from '../types/styles.type';
-import { borderContainerElement } from '../utils/createbordercontainer';
-import { BORDER_SIZE, COLOR_THEME } from '../utils/defaultstyle';
-import { validateHTMLElement } from '../utils/validatehtmlelement';
+import {
+  borderContainerElement,
+  BORDER_SIZE,
+  COLOR_THEME,
+  validateHTMLElement,
+} from '../utils';
 
 /**
  * Add a border that overlap to each other, to an element.

@@ -1,9 +1,12 @@
 import { IShorthandBorderOptions } from '../types/border.type';
 import { IPositions } from '../types/position.type';
 import { CSSStyles } from '../types/styles.type';
-import { borderContainerElement } from '../utils/createbordercontainer';
-import { BORDER_SIZE, COLOR_THEME } from '../utils/defaultstyle';
-import { validateHTMLElement } from '../utils/validatehtmlelement';
+import {
+  borderContainerElement,
+  BORDER_SIZE,
+  COLOR_THEME,
+  validateHTMLElement,
+} from '../utils';
 
 interface ISideBlocks extends IPositions {
   borderLeft?: string;

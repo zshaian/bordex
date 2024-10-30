@@ -1,6 +1,5 @@
 import { CSSStyles } from '../types/styles.type';
-import { borderContainerElement } from '../utils/createbordercontainer';
-import { COLOR_THEME } from '../utils/defaultstyle';
+import { borderContainerElement, COLOR_THEME } from '../utils';
 
 type ThinBorderSides =
   | 'top'

@@ -4,10 +4,13 @@ import {
 } from '../types/border.type';
 import { IPositions } from '../types/position.type';
 import { IBorderRadius } from '../types/borderradius.type';
-import { borderContainerElement } from '../utils/createbordercontainer';
-import { BORDER_SIZE, COLOR_THEME } from '../utils/defaultstyle';
-import { capitalizeFirstLetter } from '../utils/capitalizefirstletter';
 import { CSSStyles } from '../types/styles.type';
+import {
+  borderContainerElement,
+  BORDER_SIZE,
+  COLOR_THEME,
+  capitalizeFirstLetter,
+} from '../utils';
 
 type ICornerBorderOptions = IShorthandBorder & IPositions & IBorderRadius;
 

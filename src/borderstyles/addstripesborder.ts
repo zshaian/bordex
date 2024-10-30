@@ -1,7 +1,6 @@
 import { BorderWidthOptional } from '../types/border.type';
 import { CSSStyles } from '../types/styles.type';
-import { borderContainerElement } from '../utils/createbordercontainer';
-import { BORDER_SIZE, COLOR_THEME } from '../utils/defaultstyle';
+import { borderContainerElement, BORDER_SIZE, COLOR_THEME } from '../utils';
 
 interface IStripeBorderOptions extends BorderWidthOptional {
   stripeWidth?: string;
