@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://i.imgur.com/CZQVDsi.png" alt="bordex icon">
+  <img src="https://i.imgur.com/BP3gURu.png" alt="bordex icon">
 
   <h1>Bordex</h1>
 
