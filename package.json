@@ -35,10 +35,25 @@
       "prettier --write"
     ]
   },
-  "keywords": [],
-  "author": "",
+  "author": "frost",
+  "keywords": [
+    "frontend",
+    "border",
+    "border-style",
+    "custom-borders",
+    "css-borders",
+    "library"
+  ],
+  "description": "A JavaScript library for generating stylish pre-styled borders for HTML elements.",
+  "homepage": "https://github.com/Bear-Frost/bordex",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bear-Frost/bordex.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Bear-Frost/bordex/issues"
+  }, 
   "license": "MIT",
-  "description": "",
   "devDependencies": {
     "@commitlint/cli": "^19.5.0",
     "@commitlint/config-conventional": "^19.5.0",
