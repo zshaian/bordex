@@ -53,7 +53,7 @@ addGradientBorder(element);
 addGradientBorder(anotherElement, { angle: '90deg', colors: ['red', 'orange'] });
 ```
 ## API
-Check out the [API documentation](#) for a detailed list of available functions and options.
+Check out the [API documentation](https://bordex.netlify.app/docs/api/) for a detailed list of available functions and options.
 
 ## Examples
 Let's see an example on how to add a **stripe border** to an element
@@ -69,7 +69,7 @@ addStripeBorder(element, {}, 'stripe-border-element');
 ```
 ![an element with a stripe border to it](https://i.imgur.com/Fv4dYj0.jpeg)
 
-Check out the [Example Borders](#) for more detailed usage and demos.
+Check out the [Example Borders](https://bordex.netlify.app/docs/category/border---styles) for more detailed usage and demos.
 
 ## Contributing
 
