@@ -44,7 +44,7 @@
     "library"
   ],
   "description": "A JavaScript library for generating stylish pre-styled borders for HTML elements.",
-  "homepage": "https://github.com/Bear-Frost/bordex",
+  "homepage": "https://bordex.netlify.app/",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Bear-Frost/bordex.git"
