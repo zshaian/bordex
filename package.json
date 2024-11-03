@@ -17,7 +17,8 @@
     "prettier:fix": "prettier --write .",
     "prepare": "husky",
     "build": "parcel build src/index.ts --target main && npx dts-bundle-generator -o dist/index.d.ts src/index.ts",
-    "dev": "parcel src/index.ts --open"
+    "dev": "parcel src/index.ts --open",
+    "compile": "parcel build src/index.ts --target main"
   },
   "targets": {
     "main": {
