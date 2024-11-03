@@ -23,16 +23,10 @@ You can install Bordex via npm:
 npm install bordex
 ```
 
-Alternatively, you can include it directly in your HTML via CDN
+Alternatively, you can include it directly via CDN
 
-```html
-<!-- Example 1 -->
-<script src="./https://cdn.jsdelivr.net/npm/dist/index.js"></script>
-
-<!-- Example 2 -->
-<script type="module">
-  import { addGradientBorder } from './https://cdn.jsdelivr.net/npm/dist/index.js';
-</script>
+```js
+  import { addGradientBorder } from 'https://unpkg.com/bordex@latest/dist/index.js';
 ```
 
 ## Usage
