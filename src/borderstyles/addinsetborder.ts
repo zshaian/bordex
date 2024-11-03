@@ -123,8 +123,8 @@ function outsideBorder(
 ): HTMLDivElement {
   const outsideBorderElement = document.createElement('div');
   const outsideBorderElementDesign: CSSStyles = {
-    height: '100%',
-    width: '100%',
+    height: `calc(100% + ${borderWidth})`,
+    width: `calc(100% + ${borderWidth})`,
     borderRadius: 'inherit',
     border: 'inherit',
     borderColor: `${elementBg}`,
