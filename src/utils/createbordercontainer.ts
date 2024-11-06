@@ -27,6 +27,7 @@ function borderContainerElement(
   borderContainer.setAttribute('class', className || '');
 
   insertAfterElement(element, borderContainer);
+  setElementParentPositioning(element);
   borderContainer.append(backgroundElement, element);
 
   setElementPositioning(element);
@@ -118,6 +119,36 @@ function setBorderContainerPositioning(
   clearBorderContainerElementPosition(borderContainerElement);
 
   newBorderContainerWrapper.append(borderContainerElement);
+}
+
+//TODO: document this function
+function setElementParentPositioning(element: HTMLElement): void {
+  const parentElement = element.parentElement as HTMLElement;
+
+  const isParentElementABodyOrHTMLTag =
+    parentElement.tagName === 'BODY' || parentElement.tagName === 'HTML';
+  if (isParentElementABodyOrHTMLTag) return;
+
+  const parentElementPosition = getComputedStyleValue(
+    parentElement,
+    'position',
+  ) as string;
+
+  const parentElementZIndex = getComputedStyleValue(
+    parentElement,
+    'z-index',
+  ) as string;
+
+  const isParentElementPositionStatic = parentElementPosition === 'static';
+  const isParentElementZIndexAuto = parentElementZIndex === 'auto';
+
+  if (isParentElementPositionStatic) {
+    parentElement.style.position = 'relative';
+  }
+
+  if (isParentElementZIndexAuto) {
+    parentElement.style.zIndex = '1';
+  }
 }
 
 /**
