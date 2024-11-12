@@ -35,7 +35,7 @@
       "prettier --write"
     ]
   },
-  "author": "frost",
+  "author": "shaian",
   "keywords": [
     "frontend",
     "border",
@@ -48,11 +48,11 @@
   "homepage": "https://bordex.netlify.app/",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Bear-Frost/bordex.git"
+    "url": "git+https://github.com/zshaian/bordex"
   },
   "bugs": {
-    "url": "https://github.com/Bear-Frost/bordex/issues"
-  }, 
+    "url": "https://github.com/zshaian/bordex/issues"
+  },
   "license": "MIT",
   "devDependencies": {
     "@commitlint/cli": "^19.5.0",
