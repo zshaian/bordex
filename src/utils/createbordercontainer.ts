@@ -129,28 +129,8 @@ function setElementParentPositioning(element: HTMLElement): void {
     parentElement.tagName === 'BODY' || parentElement.tagName === 'HTML';
   if (isParentElementABodyOrHTMLTag) return;
 
-  const parentElementPosition = getComputedStyleValue(
-    parentElement,
-    'position',
-  ) as string;
-
-  const parentElementZIndex = getComputedStyleValue(
-    parentElement,
-    'z-index',
-  ) as string;
-
-  const isParentElementPositionStatic = parentElementPosition === 'static';
-  const isParentElementZIndexAuto = parentElementZIndex === 'auto';
-
-  if (isParentElementPositionStatic) {
-    parentElement.style.position = 'relative';
-  }
-
-  if (isParentElementZIndexAuto) {
-    parentElement.style.zIndex = '1';
-  }
+  parentElement.style.isolation = 'isolate';
 }
-
 /**
  * clear the positioning style for the borderContainerElement
  *
