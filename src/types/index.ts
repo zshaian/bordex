@@ -12,6 +12,9 @@ export {
   CommonBorderStyles,
   FullBorderOptions,
   borderStyles,
+  ThinBorderSides,
+  IThinBorder,
+  CornerBorderOptions,
 } from './border.type';
 
 export {
