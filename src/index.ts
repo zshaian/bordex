@@ -9,4 +9,5 @@ export {
   addOverlapBorder,
   addStripeBorder,
   addThinBorder,
+  addGlowingGradientBorder,
 } from './borderstyles';

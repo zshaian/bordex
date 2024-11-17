@@ -8,3 +8,4 @@ export { addInsetBorder } from './addinsetborder';
 export { addOverlapBorder } from './addoverlapborder';
 export { addStripeBorder } from './addstripesborder';
 export { addThinBorder } from './addthinborder';
+export { addGlowingGradientBorder } from './addglowinggradientborder';
