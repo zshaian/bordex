@@ -1,10 +1,5 @@
-import { BorderWidthOptional, CSSStyles } from '../types';
+import { IStripeBorderOptions, CSSStyles } from '../types';
 import { borderContainerElement, BORDER_SIZE, COLOR_THEME } from '../utils';
-
-interface IStripeBorderOptions extends BorderWidthOptional {
-  stripeWidth?: string;
-  colors?: string[];
-}
 
 /**
  * Add a striped border to an element.

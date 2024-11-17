@@ -1,14 +1,9 @@
-import { BorderWidthOptional, CommonBorderStyles, CSSStyles } from '../types';
+import { IInsetBorderOptions, CSSStyles } from '../types';
 import {
   borderContainerElement,
   BORDER_SIZE,
   getComputedStyleValue,
 } from '../utils';
-
-interface IInsetBorderOptions extends BorderWidthOptional {
-  borderOffset?: string;
-  borderStyle?: CommonBorderStyles;
-}
 
 /**
  * Add an inset border to an element.

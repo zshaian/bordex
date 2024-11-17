@@ -1,15 +1,10 @@
-import { BorderWidthOptional, CSSStyles } from '../types';
+import { IGradientBorderOptions, CSSStyles } from '../types';
 import {
   borderContainerElement,
   BORDER_SIZE,
   COLOR_THEME,
   getComputedStyleValue,
 } from '../utils';
-
-interface IGradientBorderOptions extends BorderWidthOptional {
-  angle?: string;
-  colors?: string[];
-}
 
 /**
  * Add a gradient border to an element.

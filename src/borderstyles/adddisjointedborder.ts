@@ -1,11 +1,5 @@
-import { CSSStyles } from '../types';
+import { CSSStyles, IDisjointedBorderOptions } from '../types';
 import { borderContainerElement, COLOR_THEME } from '../utils';
-
-interface IDisjointedBorderOptions {
-  angle?: string;
-  borderColor?: string;
-}
-
 /**
  * add a disjointed border to an element
  * @param {HTMLElement} element - The element to add a border.

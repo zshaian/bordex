@@ -1,8 +1,6 @@
 import {
-  IShorthandBorder,
   IShorthandBorderOptions,
-  IPositions,
-  IBorderRadius,
+  CornerBorderOptions,
   CSSStyles,
 } from '../types';
 import {
@@ -11,8 +9,6 @@ import {
   COLOR_THEME,
   capitalizeFirstLetter,
 } from '../utils';
-
-type ICornerBorderOptions = IShorthandBorder & IPositions & IBorderRadius;
 
 /**
  * Adds a corner border to an element.
@@ -54,7 +50,7 @@ function createAndAppendCornerBorder(
   borderContainer: HTMLDivElement,
   cornerBorder: string,
 ): void {
-  const cornerBlockPosition: ICornerBorderOptions[] = [
+  const cornerBlockPosition: CornerBorderOptions[] = [
     createCornerBorderOptions('top', 'left', cornerBorder),
     createCornerBorderOptions('top', 'right', cornerBorder),
     createCornerBorderOptions('bottom', 'left', cornerBorder),
@@ -73,13 +69,13 @@ function createAndAppendCornerBorder(
  * @param {'top' | 'bottom'} vertical - The vertical position of the corner (top or bottom).
  * @param {'left' | 'right'} horizontal - The horizontal position of the corner (left or right).
  * @param {string} borderStyle - The style of the border to apply to the corners.
- * @returns {ICornerBorderOptions} - An object containing corner border options.
+ * @returns {CornerBorderOptions} - An object containing corner border options.
  */
 function createCornerBorderOptions(
   vertical: 'top' | 'bottom',
   horizontal: 'left' | 'right',
   borderStyle: string,
-): ICornerBorderOptions {
+): CornerBorderOptions {
   return {
     [vertical]: 0,
     [horizontal]: 0,
@@ -94,11 +90,11 @@ function createCornerBorderOptions(
  * Creates a corner border element with the specified border options.
  * This function generates a div element styled as a corner border based on the provided options.
  *
- * @param {ICornerBorderOptions} cornerBorderOptions - The options for styling the corner border.
+ * @param {CornerBorderOptions} cornerBorderOptions - The options for styling the corner border.
  * @returns {HTMLDivElement} - The created corner border element.
  */
 function createCornerBorder(
-  cornerBorderOptions: ICornerBorderOptions,
+  cornerBorderOptions: CornerBorderOptions,
 ): HTMLDivElement {
   const cornerBorder = document.createElement('div');
   const borderBlockStyle: CSSStyles = {

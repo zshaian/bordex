@@ -1,19 +1,5 @@
-import { CSSStyles } from '../types';
+import { ThinBorderSides, IThinBorder, CSSStyles } from '../types';
 import { borderContainerElement, COLOR_THEME } from '../utils';
-
-type ThinBorderSides =
-  | 'top'
-  | 'right'
-  | 'bottom'
-  | 'left'
-  | 'horizontal'
-  | 'vertical';
-
-interface IThinBorder {
-  color?: string;
-  side?: ThinBorderSides;
-  outset?: string;
-}
 
 /**
  * Add a thin border to an element.

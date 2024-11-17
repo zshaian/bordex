@@ -1,9 +1,6 @@
 import { COLOR_THEME, validateHTMLElement } from '../utils';
+import { IBlurBorderOptions } from '../types';
 
-interface IBlurBorderOptions {
-  borderColor?: string;
-  borderWidth?: string;
-}
 /**
  * add a blur border style to an element
  * @param {HTMLElement} element - The element to add the blur border
