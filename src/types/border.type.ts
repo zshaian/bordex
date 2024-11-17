@@ -1,3 +1,5 @@
+import { IPositions, IBorderRadius } from './';
+
 const borderStyles = [
   'solid',
   'double',
@@ -57,6 +59,22 @@ type BorderOptionsOptional = Partial<BorderOptions>;
 
 type FullBorderOptions = BorderOptionsOptional;
 
+type CornerBorderOptions = IShorthandBorder & IPositions & IBorderRadius;
+
+type ThinBorderSides =
+  | 'top'
+  | 'right'
+  | 'bottom'
+  | 'left'
+  | 'horizontal'
+  | 'vertical';
+
+interface IThinBorder {
+  color?: string;
+  side?: ThinBorderSides;
+  outset?: string;
+}
+
 export {
   IBorderColor,
   IBorderWidth,
@@ -71,4 +89,7 @@ export {
   CommonBorderStyles,
   FullBorderOptions,
   borderStyles,
+  ThinBorderSides,
+  IThinBorder,
+  CornerBorderOptions,
 };
