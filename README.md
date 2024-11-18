@@ -52,18 +52,18 @@ Check out the [API documentation](https://bordex.netlify.app/docs/api/) for a de
 ## Examples
 Let's see an example on how to add a **stripe border** to an element
 ```js
-import { addStripeBorder } from 'bordex';
+import { addGradientBorder } from 'bordex';
 
 // Assuming you have an HTML element to apply the border to
 const element = document.getElementById('element');
 
 // Add a stripe border to an elemen with a default options.
 // The third argument is a class name for the created border element.
-addStripeBorder(element, {}, 'stripe-border-element');
+addGradientBorder(element, {}, 'gradient-border-element');
 ```
-![an element with a stripe border to it](https://i.imgur.com/Fv4dYj0.jpeg)
+![an element with a gradient border to it](https://i.imgur.com/dyD2sZp.jpeg)
 
-Check out the [Example Borders](https://bordex.netlify.app/docs/category/border---styles) for more detailed usage and demos.
+Check out the [Example Borders](https://bordex.netlify.app/docs/category/border---styles), [Codpen Demo](https://codepen.io/zhaian/pen/XWvBGMb) for more detailed usage and demos.
 
 ## Contributing
 
