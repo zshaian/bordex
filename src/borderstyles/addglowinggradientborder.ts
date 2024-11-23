@@ -15,12 +15,12 @@ import { addGradientBorder } from './addgradientborder';
  * const anotherElement = document.getElementById('anotherElement');
  *
  * // Add glowing gradient border to the element with default options
- * addGradientBorder(element);
+ * addGlowingGradientBorder(element);
  *
  * // Add a gradient border to the element with a gradient angle of 20deg,
  * // with a glowing gradient color of "red", "orange", and "purple",
  * // and a border width of 10px
- * addGradientBorder(anotherElement, { angle: '20deg',colors:['red', 'orange', 'purple'], borderWidth: '10px' });
+ * addGlowingGradientBorder(anotherElement, { angle: '20deg',colors:['red', 'orange', 'purple'], borderWidth: '10px' });
  */
 function addGlowingGradientBorder(
   element: HTMLElement,
