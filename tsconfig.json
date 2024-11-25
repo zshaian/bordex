@@ -2,7 +2,8 @@
   "extends": "@tsconfig/recommended/tsconfig.json",
   "compilerOptions": {
     "target": "ES6",                                 // Sets the target ECMAScript version
-    "module": "ESNext",                            // Specifies the module system
+    "module": "ESNext",                             // Specifies the module system
+    "jsx": "react-jsx",
     "declaration": true,
     "lib": ["DOM","ES7"],
     "strict": true,                                  // Enables all strict type-checking options
@@ -16,6 +17,6 @@
     "sourceMap": true,                               // Generates source maps for debugging
     "resolveJsonModule": true                        // Allows importing JSON files
   },
-  "include": ["src"],                                // Files to include
+  "include": ["src/**/*"],                                // Files to include
   "exclude": ["node_modules", "**/*.spec.ts"]        // Files to exclude
 }

@@ -1,8 +1,8 @@
 {
   "name": "bordex",
   "version": "0.2.0",
-  "source": "src/index.ts",
-  "main": "dist/index.js",
+  "main": "dist/bundle.cjs.js",
+  "module": "dist/bundle.esm.js",
   "types": "dist/index.d.ts",
   "type": "module",
   "files": [
@@ -16,9 +16,7 @@
     "prettier": "prettier --ignore-path .gitignore --write \"./src/**/*.+(js|ts|json)\"",
     "prettier:fix": "prettier --write .",
     "prepare": "husky",
-    "build": "parcel build src/index.ts --no-source-maps --target main && npx dts-bundle-generator -o dist/index.d.ts src/index.ts",
-    "dev": "parcel src/index.ts --open",
-    "compile": "parcel build src/index.ts --no-source-maps --target main"
+    "build": "rollup -c"
   },
   "targets": {
     "main": {
@@ -58,20 +56,28 @@
     "@commitlint/cli": "^19.5.0",
     "@commitlint/config-conventional": "^19.5.0",
     "@eslint/js": "^9.11.1",
-    "@parcel/packager-ts": "^2.12.0",
-    "@parcel/transformer-typescript-types": "^2.12.0",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^28.0.1",
+    "@rollup/plugin-node-resolve": "^15.3.0",
+    "@rollup/plugin-terser": "^0.4.4",
     "@tsconfig/recommended": "^1.0.7",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
     "@typescript-eslint/eslint-plugin": "^8.8.0",
     "@typescript-eslint/parser": "^8.8.0",
-    "dts-bundle-generator": "^9.5.1",
     "eslint": "^9.11.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.0.0",
     "husky": "^9.1.6",
     "lint-staged": "^15.2.10",
-    "parcel": "^2.12.0",
     "prettier": "^3.3.3",
-    "typescript": "^5.6.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "rollup": "^4.27.4",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "typescript": "^5.7.2",
     "typescript-eslint": "^8.8.0"
   }
 }
