@@ -1,4 +1,4 @@
-import { forwardRef } from 'react';
+import React, { forwardRef } from 'react';
 import type { OverlapBorderProps } from '../types/type';
 import BorderContainer from './BorderContainer';
 import { DEFAULT_BORDER_SIZE, DEFAULT_COLOR_THEME } from '../themes/theme';
@@ -18,7 +18,16 @@ const OverlapBorder = forwardRef<HTMLDivElement, OverlapBorderProps>(
       borderBottomWidth = borderWidth,
       borderLeftWidth = borderWidth,
       borderStyle,
+      borderTopStyle = borderStyle as React.CSSProperties['borderTopStyle'],
+      borderRightStyle = borderStyle as React.CSSProperties['borderRightStyle'],
+      borderBottomStyle = borderStyle as React.CSSProperties['borderBottomStyle'],
+      borderLeftStyle = borderStyle as React.CSSProperties['borderLeftStyle'],
       borderColor,
+      borderTopColor = borderColor,
+      borderRightColor = borderColor,
+      borderBottomColor = borderColor,
+      borderLeftColor = borderColor,
+      style,
       ...rest
     } = {
       ...defaultOverlapBorderProps,
@@ -31,17 +40,26 @@ const OverlapBorder = forwardRef<HTMLDivElement, OverlapBorderProps>(
 
     return (
       <BorderContainer
+        ref={ref}
         style={{
+          ...style,
           borderWidth,
           borderTopWidth,
           borderRightWidth,
           borderBottomWidth,
           borderLeftWidth,
-          borderColor,
           borderStyle,
+          borderTopStyle,
+          borderRightStyle,
+          borderBottomStyle,
+          borderLeftStyle,
+          borderColor,
+          borderTopColor,
+          borderRightColor,
+          borderBottomColor,
+          borderLeftColor,
         }}
         {...rest}
-        ref={ref}
       >
         <OutsideBorderElement
           outsideBorderElementOffset={offset}
@@ -66,11 +84,9 @@ const OutsideBorderElement: React.FC<{
       borderRadius: 'inherit',
       position: 'absolute',
       inset: `calc(0px - (${props.outsideBorderElementOffset} + ${props.horizontalBorderWidth})) calc(${props.outsideBorderElementOffset} - ${props.horizontalBorderWidth})`,
-      zIndex: '-1',
+      zIndex: '-2',
     }}
-  >
-    ,
-  </div>
+  ></div>
 );
 
 export default OverlapBorder;
