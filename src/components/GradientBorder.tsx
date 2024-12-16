@@ -48,7 +48,7 @@ const GradientBorderElement: React.FC<GradientBorderProps> = props => {
     props.borderLeftWidth,
   ];
   const borderTotalWidth = borderSpecificWidthList
-    .map(borderWidth => `${borderWidth ?? props.borderWidth}`)
+    .map(borderWidth => `-${borderWidth ?? props.borderWidth}`)
     .join(' ');
   return (
     <div
@@ -56,7 +56,7 @@ const GradientBorderElement: React.FC<GradientBorderProps> = props => {
         background: `linear-gradient(${props.angle},${props.colors?.join(',')})`,
         position: 'absolute',
         inset: borderTotalWidth,
-        zIndex: '-1',
+        zIndex: '-2',
       }}
     ></div>
   );
