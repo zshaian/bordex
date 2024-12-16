@@ -14,24 +14,20 @@ const BLOCK_SIZE = '10px';
 
 const FancyBorder = forwardRef<HTMLDivElement, FancyBorderProps>(
   (props, ref) => {
-    const { borderColor, borderWidth, borderStyle, ...rest } = {
+    const { borderColor, borderWidth, borderStyle, style, ...rest } = {
       ...defaultFancyBorderProps,
       ...props,
     };
 
     return (
-      <BorderContainer ref={ref} {...rest}>
-        <div
-          style={{
-            borderWidth,
-            borderStyle,
-            borderColor,
-          }}
-        >
-          <OutisdeBorder borderElementWidth={borderWidth} />
-          <SideBlockBorderCollection />
-          {props.children}
-        </div>
+      <BorderContainer
+        ref={ref}
+        style={{ ...style, borderColor, borderWidth, borderStyle }}
+        {...rest}
+      >
+        <OutisdeBorder borderElementWidth={borderWidth} />
+        <SideBlockBorderCollection />
+        {props.children}
       </BorderContainer>
     );
   },
@@ -47,7 +43,7 @@ const OutisdeBorder: React.FC<{
         position: 'absolute',
         inset: outsideBorderDistance,
         border: 'inherit',
-        zIndex: '-1',
+        zIndex: '-2',
         borderRadius: 'inherit',
       }}
     ></div>
@@ -72,8 +68,9 @@ const SideBlockBorder: React.FC<React.CSSProperties> = props => {
       style={{
         height: BLOCK_SIZE,
         width: BLOCK_SIZE,
-        boxSizing: 'inherit',
+        boxSizing: 'content-box',
         position: 'absolute',
+        zIndex: '-3',
         ...props,
       }}
     ></div>
