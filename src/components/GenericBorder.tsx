@@ -28,34 +28,36 @@ const GenericBorder = forwardRef<HTMLDivElement, GenericBorderProps>(
       borderRightStyle,
       borderBottomStyle,
       borderLeftStyle,
+      style,
       ...rest
     } = {
       ...defaultGenericBorderProps,
       ...props,
     };
     return (
-      <BorderContainer ref={ref} {...rest}>
-        <div
-          style={{
-            borderWidth,
-            borderTopWidth,
-            borderRightWidth,
-            borderBottomWidth,
-            borderLeftWidth,
-            borderColor,
-            borderTopColor,
-            borderRightColor,
-            borderBottomColor,
-            borderLeftColor,
-            borderStyle,
-            borderTopStyle,
-            borderRightStyle,
-            borderBottomStyle,
-            borderLeftStyle,
-          }}
-        >
-          {props.children}
-        </div>
+      <BorderContainer
+        ref={ref}
+        style={{
+          ...style,
+          borderWidth,
+          borderTopWidth,
+          borderRightWidth,
+          borderBottomWidth,
+          borderLeftWidth,
+          borderColor,
+          borderTopColor,
+          borderRightColor,
+          borderBottomColor,
+          borderLeftColor,
+          borderStyle,
+          borderTopStyle,
+          borderRightStyle,
+          borderBottomStyle,
+          borderLeftStyle,
+        }}
+        {...rest}
+      >
+        {props.children}
       </BorderContainer>
     );
   },
