@@ -51,7 +51,7 @@ const StripeBorderElement: React.FC<
       inset: `-${props.borderTopWidth} -${props.borderRightWidth} -${props.borderBottomWidth} -${props.borderLeftWidth}`,
       borderRadius: 'inherit',
       background: `repeating-linear-gradient(45deg,${props.stripeGradientString})`,
-      zIndex: '-1',
+      zIndex: '-2',
     }}
   ></div>
 );
