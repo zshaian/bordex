@@ -14,6 +14,8 @@ type BorderOption<T extends 'Width' | 'Style' | 'Color'> = {
   [K in `border${BorderProperties}${T}`]?: React.CSSProperties[`border${BorderProperties}${T}`];
 };
 
+type DivProps = React.ComponentProps<'div'>;
+
 interface BorderWidthProps extends BorderOption<'Width'> {
   borderWidth?: React.CSSProperties['borderWidth'];
 }
@@ -41,63 +43,65 @@ type BlurBorderProps = {
   borderWidth?: BorderWidthProps['borderWidth'];
   borderBlur?: string;
   children?: React.ReactNode;
-};
+} & DivProps;
 
 type CornerBorderProps = {
   borderColor?: BorderColorProps['borderColor'];
   borderWidth?: BorderWidthProps['borderWidth'];
   borderStyle?: BorderStyleProps['borderStyle'];
   children?: React.ReactNode;
-};
+} & DivProps;
 
 type DisjointedBorderProps = {
   angle?: CSSAngle;
   borderColor?: BorderColorProps['borderColor'];
   children?: React.ReactNode;
-};
+} & DivProps;
 
 type FancyBorderProps = {
   borderWidth?: BorderWidthProps['borderWidth'];
   borderColor?: BorderColorProps['borderColor'];
   borderStyle?: BorderStyleProps['borderStyle'];
   children?: React.ReactNode;
-};
+} & DivProps;
 
 type GenericBorderProps = {
   children?: React.ReactNode;
-} & FullBorderProps;
+} & FullBorderProps &
+  DivProps;
 
 type GradientBorderProps = {
   angle?: CSSAngle;
   colors?: React.CSSProperties['color'][];
   children?: React.ReactNode;
-} & BorderWidthProps;
+} & BorderWidthProps &
+  DivProps;
 
 type InsetBorderProps = {
   borderOffset?: React.CSSProperties['width'];
   borderWidth?: BorderWidthProps['borderWidth'];
   borderStyle?: BorderStyleProps['borderStyle'];
   children?: React.ReactNode;
-};
+} & DivProps;
 
 type OverlapBorderProps = {
   children?: React.ReactNode;
-} & BorderWidthProps &
-  BorderStyleProps &
-  BorderColorProps;
+} & FullBorderProps &
+  DivProps;
 
 type StripesBorderProps = {
   stripeWidth?: string;
   colors?: React.CSSProperties['color'][];
   children?: React.ReactNode;
-} & BorderWidthProps;
+} & BorderWidthProps &
+  DivProps;
 
 type ThinBorderProps = {
   color?: React.CSSProperties['color'];
   side?: Sides;
   outset?: string;
   children?: React.ReactNode;
-};
+} & DivProps;
 
 export type {
   BlurBorderProps,
