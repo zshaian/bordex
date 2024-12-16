@@ -26,13 +26,13 @@ const ThinBorder = forwardRef<HTMLDivElement, ThinBorderProps>((props, ref) => {
     <BorderContainer ref={ref} {...rest}>
       <div
         style={{
-          borderImageSource: `linear-gradient(${isVerticalPosition ? 'to bottom' : 'to left'},rgba(0,0,0,0) 1%), ${color} 50%, rgba(0,0,0,0) 99%)`,
+          borderImageSource: `linear-gradient(${isVerticalPosition ? 'to left' : 'to bottom'},rgba(0,0,0,0) 1%, ${color} 50%, rgba(0,0,0,0) 99%)`,
           borderImageOutset: computedBorderImageOutset,
-          borderImageWidth: '1.5px',
+          borderImageWidth: '1.5px', // width of the border, maybe adjust it later if it's too thin.
           borderImageSlice: getBorderImageSlice(side),
-          position: 'absolute', // width of the border, maybe adjust it later if it's too thin.
-          inset: '0',
-          zIndex: '-1',
+          position: 'absolute',
+          inset: '-1.5px',
+          zIndex: '-2',
         }}
       ></div>
 
