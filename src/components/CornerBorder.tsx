@@ -40,7 +40,13 @@ const CornerBorder = forwardRef<HTMLDivElement, CornerBorderProps>(
 const CornerBorderElement: React.FC = (props: React.CSSProperties) => {
   return (
     <div
-      style={{ height: '40%', width: '20%', position: 'absolute', ...props }}
+      style={{
+        height: '40%',
+        width: '20%',
+        position: 'absolute',
+        zIndex: '-2',
+        ...props,
+      }}
     ></div>
   );
 };
