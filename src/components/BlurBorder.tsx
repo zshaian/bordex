@@ -10,7 +10,7 @@ const defaultBlurBorderProps = {
 } satisfies BlurBorderProps;
 
 const BlurBorder = forwardRef<HTMLDivElement, BlurBorderProps>((props, ref) => {
-  const { borderBlur, borderWidth, borderColor, ...rest } = {
+  const { borderBlur, borderWidth, borderColor, style, ...rest } = {
     ...defaultBlurBorderProps,
     ...props,
   };
@@ -25,7 +25,7 @@ const BlurBorder = forwardRef<HTMLDivElement, BlurBorderProps>((props, ref) => {
   );
 
   return (
-    <div ref={ref} {...rest} style={blurBorderStyle}>
+    <div ref={ref} style={{ ...style, ...blurBorderStyle }} {...rest}>
       {props.children}
     </div>
   );
