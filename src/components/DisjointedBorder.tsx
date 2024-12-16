@@ -35,7 +35,7 @@ const DisjointedBorderElement: React.FC<DisjointedBorderProps> = (
         position: 'absolute',
         inset: DEFAULT_BORDER_OFFSET,
         borderRadius: 'inherit',
-        zIndex: '-1',
+        zIndex: '-2',
         background: `linear-gradient(${props.angle},#00000000 1%,${props.borderColor},#00000000 99%)`,
       }}
     ></div>
