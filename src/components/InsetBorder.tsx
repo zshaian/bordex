@@ -1,34 +1,57 @@
-import { forwardRef, useRef } from 'react';
+import { forwardRef } from 'react';
 
 import type { InsetBorderProps } from '../types/type';
-import { useParentElementBg } from '../hooks/useParentElementBg';
 import BorderContainer from './BorderContainer';
-import { DEFAULT_BORDER_SIZE } from '../themes/theme';
+import { DEFAULT_BORDER_SIZE, DEFAULT_COLOR_THEME } from '../themes/theme';
 
 const defaultInsetBorderProps = {
   borderOffset: '15px',
   borderStyle: 'solid',
   borderWidth: DEFAULT_BORDER_SIZE.sm,
+  borderColor: 'transparent',
+  insideBorderColor: DEFAULT_COLOR_THEME.primary,
+  outsideBorderColor: DEFAULT_COLOR_THEME.secondary,
 } satisfies InsetBorderProps;
 
 const InsetBorder = forwardRef<HTMLDivElement, InsetBorderProps>(
   (props, ref) => {
-    const { borderOffset, borderStyle, borderWidth, ...rest } = {
+    const {
+      borderOffset,
+      borderStyle,
+      borderWidth,
+      borderColor,
+      insideBorderColor,
+      outsideBorderColor,
+      style,
+      ...rest
+    } = {
       ...defaultInsetBorderProps,
       ...props,
     };
 
     return (
-      <BorderContainer ref={ref} {...rest}>
+      <BorderContainer
+        ref={ref}
+        style={{
+          ...style,
+          borderColor,
+          borderStyle,
+          borderWidth,
+          isolation: 'isolate',
+        }}
+        {...rest}
+      >
         <InsideBorderElement
           borderOffset={borderOffset}
           borderStyle={borderStyle}
           borderWidth={borderWidth}
+          insideBorderColor={insideBorderColor}
         />
         <OutsideBorderElement
           borderOffset={borderOffset}
           borderStyle={borderStyle}
           borderWidth={borderWidth}
+          outsideBorderColor={outsideBorderColor}
         />
         {props.children}
       </BorderContainer>
@@ -37,20 +60,16 @@ const InsetBorder = forwardRef<HTMLDivElement, InsetBorderProps>(
 );
 
 const InsideBorderElement: React.FC<InsetBorderProps> = props => {
-  const insideBorderRef = useRef<HTMLDivElement>(null);
-  const [parentBg] = useParentElementBg(insideBorderRef, 'parent');
-
   return (
     <div
-      ref={insideBorderRef}
       style={{
         height: `calc(100% - ${props.borderOffset})`,
         width: `calc(100% - ${props.borderOffset})`,
         borderRadius: 'inherit',
         borderTop: 'inherit',
         borderLeft: 'inherit',
-        borderTopColor: parentBg,
-        borderLeftColor: parentBg,
+        borderTopColor: props.insideBorderColor,
+        borderLeftColor: props.insideBorderColor,
         position: 'absolute',
         left: `calc(${props.borderOffset} + ${props.borderWidth})`,
         top: `calc(${props.borderOffset} + ${props.borderWidth})`,
@@ -61,17 +80,13 @@ const InsideBorderElement: React.FC<InsetBorderProps> = props => {
 };
 
 const OutsideBorderElement: React.FC<InsetBorderProps> = props => {
-  const outsideBorderRef = useRef<HTMLDivElement>(null);
-  const [parentBg] = useParentElementBg(outsideBorderRef, 'greatGrandparent');
-
   return (
     <div
-      ref={outsideBorderRef}
       style={{
         height: `calc(100% + ${props.borderWidth})`,
         width: `calc(100% + ${props.borderWidth})`,
         borderRadius: 'inherit',
-        borderColor: parentBg,
+        borderColor: props.outsideBorderColor,
         position: 'absolute',
         left: `calc(${props.borderOffset} + ${props.borderWidth})`,
         top: `calc(${props.borderOffset} + ${props.borderWidth})`,

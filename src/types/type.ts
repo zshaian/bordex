@@ -81,6 +81,9 @@ type InsetBorderProps = {
   borderOffset?: React.CSSProperties['width'];
   borderWidth?: BorderWidthProps['borderWidth'];
   borderStyle?: BorderStyleProps['borderStyle'];
+  borderColor?: BorderColorProps['borderColor'];
+  insideBorderColor?: BorderColorProps['borderColor'];
+  outsideBorderColor?: BorderColorProps['borderColor'];
   children?: React.ReactNode;
 } & DivProps;
 
