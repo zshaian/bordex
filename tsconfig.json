@@ -1,21 +1,22 @@
 {
   "extends": "@tsconfig/recommended/tsconfig.json",
   "compilerOptions": {
-    "target": "ES6",                                 // Sets the target ECMAScript version
-    "module": "ESNext",                            // Specifies the module system
-    "declaration": true,
-    "lib": ["DOM","ES7"],
-    "strict": true,                                  // Enables all strict type-checking options
-    "esModuleInterop": true,                         // Ensures compatibility with ES6 module imports/exports
-    "skipLibCheck": true,                            // Skips type checking of all declaration files (*.d.ts)
-    "forceConsistentCasingInFileNames": true,        // Ensures consistent file casing across the project
-    "moduleResolution": "node",                      // Sets module resolution for node.js modules
-    "allowSyntheticDefaultImports": true,            // Allows default imports from modules with no default export
-    "outDir": "./dist",                              // Output directory for compiled files
-    "rootDir": "./src",                              // Root directory of source files
-    "sourceMap": true,                               // Generates source maps for debugging
-    "resolveJsonModule": true                        // Allows importing JSON files
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx"
   },
-  "include": ["src"],                                // Files to include
-  "exclude": ["node_modules", "**/*.spec.ts"]        // Files to exclude
+  "include": ["src"],
+  "exclude": ["node_modules"]
 }
