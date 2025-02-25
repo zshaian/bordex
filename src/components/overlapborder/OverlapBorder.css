@@ -1,0 +1,9 @@
+.parent-position {
+  position: relative;
+}
+
+.offset-border {
+  border: inherit;
+  position: absolute;
+  z-index: -2;
+}
