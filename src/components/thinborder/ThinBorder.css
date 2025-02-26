@@ -1,0 +1,14 @@
+body {
+  background-color: black;
+}
+.parent-position {
+  color: white;
+  background-color: black;
+  position: relative;
+}
+
+.thin-border {
+  inset: 0;
+  position: absolute;
+  z-index: -2;
+}
