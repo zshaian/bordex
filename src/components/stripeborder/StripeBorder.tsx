@@ -1,6 +1,6 @@
 import { forwardRef } from 'react';
 import { StripeBorderProps } from './StripeBorder.types';
-import { getStripeBorderString } from '../../utils/getStripeBorderString';
+import { getStripeBorderString } from '../../utils';
 import './StripeBorder.css';
 import { BORDER_SIZE, COLOR_THEME } from '../../constants';
 
