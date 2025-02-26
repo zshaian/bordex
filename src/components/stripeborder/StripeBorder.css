@@ -1,0 +1,10 @@
+.parent-position {
+  position: relative;
+  background: black;
+  color: white;
+}
+
+.stripe-border {
+  position: absolute;
+  z-index: -2;
+}
