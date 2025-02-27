@@ -20,15 +20,15 @@ const FancyBorder = forwardRef<HTMLDivElement, FancyBorderProps>(
       children,
       ...rest
     } = props;
-    const FancyBorderStyle: React.CSSProperties = {
+    const fancyBorderStyle = {
       borderWidth,
       borderStyle,
       borderColor,
-    };
+    } as React.CSSProperties;
 
     return (
       <div
-        style={{ ...FancyBorderStyle, ...style }}
+        style={{ ...fancyBorderStyle, ...style }}
         className={`parent-position ${className}`}
         {...rest}
         ref={ref}

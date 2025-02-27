@@ -1,4 +1,4 @@
-import { forwardRef } from 'react';
+import React, { forwardRef } from 'react';
 import { OverlapBorderProps } from './OverlapBorder.types';
 import { BORDER_SIZE, COLOR_THEME } from '../../constants';
 import './OverlapBorder.css';
@@ -20,11 +20,11 @@ const OverlapBorder = forwardRef<HTMLDivElement, OverlapBorderProps>(
       style,
       ...rest
     } = props;
-    const overlapBorderStyle: React.CSSProperties = {
+    const overlapBorderStyle = {
       borderWidth,
       borderStyle,
       borderColor,
-    };
+    } as React.CSSProperties;
     const BORDER_OFFSET = '40px';
     return (
       <div

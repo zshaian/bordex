@@ -39,7 +39,7 @@ const NormalBorder = forwardRef<HTMLDivElement, NormalBorderProps>(
       style,
       ...rest
     } = props;
-    const normalBorderStyle: React.CSSProperties = {
+    const normalBorderStyle = {
       border,
       borderWidth,
       borderStyle,
@@ -64,7 +64,7 @@ const NormalBorder = forwardRef<HTMLDivElement, NormalBorderProps>(
       borderLeftWidth,
       borderLeftStyle,
       borderLeftColor,
-    };
+    } as React.CSSProperties;
 
     return (
       <div style={{ ...normalBorderStyle, ...style }} {...rest} ref={ref}>
