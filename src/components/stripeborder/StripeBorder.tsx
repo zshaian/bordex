@@ -6,7 +6,7 @@ import { BORDER_SIZE, COLOR_THEME } from '../../constants';
 
 const stripeBorderDefaultOptions = {
   angle: '45deg',
-  stripeWidth: '10%',
+  stripeWidth: 10,
   colors: [COLOR_THEME.primary, COLOR_THEME.secondary],
   borderWidth: BORDER_SIZE.sm,
 } satisfies StripeBorderProps;
