@@ -29,7 +29,7 @@ const OverlapBorder = forwardRef<HTMLDivElement, OverlapBorderProps>(
     return (
       <div
         style={{ ...overlapBorderStyle, ...style }}
-        className={`parent-position ${className}`}
+        className={`overlap-border-parent-position ${className}`}
         {...rest}
         ref={ref}
       >

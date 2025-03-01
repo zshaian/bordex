@@ -29,7 +29,7 @@ const FancyBorder = forwardRef<HTMLDivElement, FancyBorderProps>(
     return (
       <div
         style={{ ...fancyBorderStyle, ...style }}
-        className={`parent-position ${className}`}
+        className={`fancy-border-parent-position ${className}`}
         {...rest}
         ref={ref}
       >

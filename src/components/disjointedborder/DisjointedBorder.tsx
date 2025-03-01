@@ -26,7 +26,11 @@ const DisjointedBorder = forwardRef<HTMLDivElement, DisjointedBorderProps>(
       zIndex: '-1',
     };
     return (
-      <div className={`parent-initial-design ${className}`} {...rest} ref={ref}>
+      <div
+        className={`disjointed-parent-initial-design ${className}`}
+        {...rest}
+        ref={ref}
+      >
         <div style={DisjointedBorderStyle} className="disjointed-border"></div>
         {children}
       </div>

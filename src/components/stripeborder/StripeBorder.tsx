@@ -29,7 +29,11 @@ const StripeBorder = forwardRef<HTMLDivElement, StripeBorderProps>(
       backgroundImage: `repeating-linear-gradient(${angle},${stripeBorderString})`,
     };
     return (
-      <div className={`parent-position ${className}`} {...rest} ref={ref}>
+      <div
+        className={`stripe-border-parent-position ${className}`}
+        {...rest}
+        ref={ref}
+      >
         <div style={stripeBorderStyle} className="stripe-border"></div>
         {children}
       </div>

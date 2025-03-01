@@ -25,7 +25,11 @@ const GradientBorder = forwardRef<HTMLDivElement, GradientBorderProps>(
     };
 
     return (
-      <div className={`parent-position ${className}`} {...rest} ref={ref}>
+      <div
+        className={`gradient-border-parent-position ${className}`}
+        {...rest}
+        ref={ref}
+      >
         <div style={gradientBorderStyle} className="gradient-border"></div>
         {children}
       </div>

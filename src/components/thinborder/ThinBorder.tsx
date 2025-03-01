@@ -29,7 +29,11 @@ const ThinBorder = forwardRef<HTMLDivElement, ThinBorderProps>((props, ref) => {
   };
 
   return (
-    <div className={`parent-position ${className}`} {...rest} ref={ref}>
+    <div
+      className={`thin-border-parent-position ${className}`}
+      {...rest}
+      ref={ref}
+    >
       <div style={thinBorderStyle} className="thin-border"></div>
       {children}
     </div>

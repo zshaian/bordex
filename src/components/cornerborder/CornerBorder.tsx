@@ -25,7 +25,11 @@ const CornerBorder = forwardRef<HTMLDivElement, CornerBorderProps>(
       borderColor,
     } as React.CSSProperties;
     return (
-      <div className={`parent-position ${className}`} {...rest} ref={ref}>
+      <div
+        className={`corner-border-parent-position ${className}`}
+        {...rest}
+        ref={ref}
+      >
         <div
           style={cornerBorderStyle}
           className="corner-borders top-left-corner-border"

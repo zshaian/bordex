@@ -1,9 +1,4 @@
-body {
-  background-color: black;
-}
-.parent-position {
-  color: white;
-  background-color: black;
+.thin-border-parent-position {
   position: relative;
 }
 
