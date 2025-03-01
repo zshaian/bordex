@@ -11,9 +11,9 @@ export const StripeBorderWithProps: StoryObj<typeof StripeBorder> = {
   render: () => (
     <StripeBorder
       borderWidth="5px"
-      stripeWidth="10%"
+      stripeWidth={10}
       angle="45deg"
-      colors={['red', 'green', 'blue']}
+      colors={['red', 'orange', 'lightblue']}
       style={{
         width: 'max-content',
         padding: '2rem',
