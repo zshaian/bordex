@@ -1,6 +1,8 @@
 import { forwardRef } from 'react';
 import { NormalBorderProps } from './NormalBorder.types';
 import { BORDER_SIZE, COLOR_THEME } from '../../constants';
+import './NormalBorder.css';
+
 const normalBorderDefaultOptions = {
   border: `${BORDER_SIZE.sm} solid ${COLOR_THEME.primary}`,
   borderWidth: BORDER_SIZE.sm,
