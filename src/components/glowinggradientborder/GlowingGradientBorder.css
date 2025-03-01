@@ -1,6 +1,3 @@
-body {
-  background-color: black;
-}
 .glowing-gradient-border {
   --glowing-gradient-blur: 10px;
   filter: blur(var(--glowing-gradient-blur));
