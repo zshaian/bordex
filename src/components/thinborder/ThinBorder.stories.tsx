@@ -11,10 +11,10 @@ export const ThinBorderWithProps: StoryObj<typeof ThinBorder> = {
   render: () => (
     <ThinBorder
       borderColor="red"
-      side="vertical"
+      side="left"
       style={{
         width: 'max-content',
-        padding: '2rem',
+        padding: '1rem',
       }}
     >
       <p>hello world</p>
