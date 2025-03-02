@@ -51,3 +51,4 @@ coverage/
 /tests/output/
 
 *storybook.log
+storybook-static
