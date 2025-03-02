@@ -1,5 +1,5 @@
 import { forwardRef } from 'react';
-import { FancyBorderProps } from './FancyBorder.types';
+import type { FancyBorderProps } from './FancyBorder.types';
 import './FancyBorder.css';
 import { BORDER_SIZE, COLOR_THEME } from '../../constants';
 

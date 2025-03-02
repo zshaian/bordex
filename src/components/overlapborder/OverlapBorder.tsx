@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import { OverlapBorderProps } from './OverlapBorder.types';
+import type { OverlapBorderProps } from './OverlapBorder.types';
 import { BORDER_SIZE, COLOR_THEME } from '../../constants';
 import './OverlapBorder.css';
 

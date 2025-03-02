@@ -1,5 +1,5 @@
 import { forwardRef } from 'react';
-import { StripeBorderProps } from './StripeBorder.types';
+import type { StripeBorderProps } from './StripeBorder.types';
 import { getStripeBorderString } from '../../utils';
 import './StripeBorder.css';
 import { BORDER_SIZE, COLOR_THEME } from '../../constants';

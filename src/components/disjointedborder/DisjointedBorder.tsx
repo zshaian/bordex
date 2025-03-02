@@ -1,5 +1,5 @@
 import { forwardRef } from 'react';
-import { DisjointedBorderProps } from './DisjointedBorder.types';
+import type { DisjointedBorderProps } from './DisjointedBorder.types';
 import './DisjointedBorder.css';
 import { COLOR_THEME } from '../../constants';
 

@@ -1,5 +1,5 @@
 import { forwardRef } from 'react';
-import { BlurBorderProps } from './BlurBorder.types';
+import type { BlurBorderProps } from './BlurBorder.types';
 import { BORDER_SIZE, COLOR_THEME } from '../../constants';
 import './BlurBorder.css';
 

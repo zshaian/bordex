@@ -1,5 +1,5 @@
 import { forwardRef } from 'react';
-import { GlowingGradientBorderProps } from './GlowingGradientBorder.types';
+import type { GlowingGradientBorderProps } from './GlowingGradientBorder.types';
 import GradientBorder from '../gradientborder';
 import './GlowingGradientBorder.css';
 import { BORDER_SIZE, COLOR_THEME } from '../../constants';

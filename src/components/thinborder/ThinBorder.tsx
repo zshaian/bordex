@@ -1,5 +1,5 @@
 import { forwardRef } from 'react';
-import { ThinBorderProps } from './ThinBorder.types';
+import type { ThinBorderProps } from './ThinBorder.types';
 import { getThinBorderAngle, getThinBorderSide } from '../../utils';
 import './ThinBorder.css';
 import { COLOR_THEME } from '../../constants';

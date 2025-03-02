@@ -1,5 +1,5 @@
 import { forwardRef } from 'react';
-import { CornerBorderProps } from './CornerBorder.types';
+import type { CornerBorderProps } from './CornerBorder.types';
 import './CornerBorder.css';
 import { BORDER_SIZE, COLOR_THEME } from '../../constants';
 
