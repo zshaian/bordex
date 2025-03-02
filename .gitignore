@@ -1,0 +1,52 @@
+# Node.js
+node_modules/
+npm-debug.log
+package-lock.json
+yarn-error.log
+yarn.lock
+
+# Build output
+dist/
+build/
+*.tgz
+
+# Ignore Parcel cache
+.parcel-cache
+
+# Dependency directories
+.bower_components/
+
+# Logs
+logs/
+*.log
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swm
+
+# Coverage directory
+coverage/
+
+# Miscellaneous
+*.tgz
+*.zip
+*.tar.gz
+*.rar
+
+# Test outputs
+/tests/output/
