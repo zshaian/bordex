@@ -13,8 +13,8 @@ permissions:
 jobs:
   deploy:
     environment:
-      name: github-pages
-      url: ${{ steps.build-publish.outputs.page_url }}
+      name: storybook-component-docs
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -28,8 +28,14 @@ jobs:
       - name: Install dependencies
         run: npm install # Or yarn install if using Yarn
 
-      - id: build-publish
-        uses: bitovi/github-actions-storybook-to-github-pages@v1.0.0
+      - name: Build Storybook
+        run: npm run build-storybook
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
         with:
           path: storybook-static/
-          build_command: npm run build-storybook
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
