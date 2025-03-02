@@ -1,9 +1,9 @@
-name: Build and Publish Storybook to GitHub Pages
+name: Build and Publish storybook to GitHub Pages
 
 on:
   push:
     branches:
-      - 'shift/react'
+      - 'main'
 
 permissions:
   contents: read
@@ -13,30 +13,12 @@ permissions:
 jobs:
   deploy:
     environment:
-      name: storybook-component-docs
-      url: ${{ steps.deployment.outputs.page_url }}
+      name: github-pages
+      url: ${{ steps.build-publish.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - id: build-publish
+        uses: bitovi/github-actions-storybook-to-github-pages@v1.0.0
         with:
-          node-version: 18 # Adjust based on your needs
-
-      - name: Install dependencies
-        run: npm install # Or yarn install if using Yarn
-
-      - name: Build Storybook
-        run: npm run build-storybook
-
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: storybook-static
-          path: storybook-static/
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
+          path: storybook-static
+          build_command: npm run build-storybook
