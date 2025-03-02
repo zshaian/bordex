@@ -1,10 +1,10 @@
 import { forwardRef } from 'react';
 import { FancyBorderProps } from './FancyBorder.types';
 import './FancyBorder.css';
-import { COLOR_THEME } from '../../constants';
+import { BORDER_SIZE, COLOR_THEME } from '../../constants';
 
 const fancyBorderDefaultOpttions = {
-  borderWidth: '5px',
+  borderWidth: BORDER_SIZE.sm,
   borderStyle: 'solid',
   borderColor: COLOR_THEME.primary,
 } satisfies FancyBorderProps;
