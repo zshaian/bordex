@@ -23,15 +23,6 @@
     "build-storybook-docs": "storybook build --docs",
     "deploy-storybook": "gh-pages -d storybook-static -b docs-pages -m docs:update"
   },
-  "targets": {
-    "main": {
-      "outputFormat": "esmodule",
-      "distDir": "./dist",
-      "engines": {
-        "browsers": "> 0.25%, not dead"
-      }
-    }
-  },
   "lint-staged": {
     "*.{js,ts}": [
       "eslint --fix",
