@@ -1,4 +1,3 @@
-export * from './smartrating';
 export * from './blurborder';
 export * from './cornerborder';
 export * from './disjointedborder';
