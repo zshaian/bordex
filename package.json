@@ -39,7 +39,7 @@
     "library"
   ],
   "description": "A JavaScript library for generating stylish pre-styled borders for HTML elements.",
-  "homepage": "https://bordex.netlify.app/",
+  "homepage": "https://zshaian.github.io/bordex",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zshaian/bordex.git"
@@ -65,9 +65,11 @@
     "@storybook/addon-interactions": "^8.5.8",
     "@storybook/addon-onboarding": "^8.5.8",
     "@storybook/blocks": "^8.5.8",
+    "@storybook/manager-api": "^8.6.3",
     "@storybook/react": "^8.5.8",
     "@storybook/react-vite": "^8.5.8",
     "@storybook/test": "^8.5.8",
+    "@storybook/theming": "^8.6.3",
     "@testing-library/react": "^16.2.0",
     "@tsconfig/recommended": "^1.0.7",
     "@types/jest": "^29.5.14",
