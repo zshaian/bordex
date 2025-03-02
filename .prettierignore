@@ -3,6 +3,7 @@ dist/
 build/
 coverage/
 public/
+storybook-static/
 *.min.js
 *.bundle.js
 *.log
