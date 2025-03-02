@@ -60,7 +60,6 @@ export const StripeBorderWithProps: StoryObj<typeof StripeBorder> = {
     <StripeBorder
       {...StripeBorderWithProps.args}
       style={{
-        width: 'max-content',
         padding: '2rem',
       }}
     >
@@ -73,7 +72,6 @@ export const StripeBorderDefault: StoryObj<typeof StripeBorder> = {
   render: () => (
     <StripeBorder
       style={{
-        width: 'max-content',
         padding: '2rem',
       }}
     >

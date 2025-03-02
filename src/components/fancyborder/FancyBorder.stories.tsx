@@ -49,7 +49,6 @@ export const FancyBorderWithProps: StoryObj<typeof FancyBorder> = {
     <FancyBorder
       {...FancyBorderWithProps.args}
       style={{
-        width: 'max-content',
         padding: '2rem',
       }}
     >
@@ -62,7 +61,6 @@ export const FancyBorderDefault: StoryObj<typeof FancyBorder> = {
   render: () => (
     <FancyBorder
       style={{
-        width: 'max-content',
         padding: '2rem',
       }}
     >

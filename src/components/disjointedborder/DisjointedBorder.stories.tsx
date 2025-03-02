@@ -35,7 +35,7 @@ export const DisjointedBorderWithProps: StoryObj<typeof DisjointedBorder> = {
   render: () => (
     <DisjointedBorder
       {...DisjointedBorderWithProps.args}
-      style={{ padding: '0.5rem', width: 'max-content' }}
+      style={{ padding: '0.5rem' }}
     >
       <p>hello world</p>
     </DisjointedBorder>
@@ -44,7 +44,7 @@ export const DisjointedBorderWithProps: StoryObj<typeof DisjointedBorder> = {
 
 export const DisjointedBorderDefault: StoryObj<typeof DisjointedBorder> = {
   render: () => (
-    <DisjointedBorder style={{ padding: '0.5rem', width: 'max-content' }}>
+    <DisjointedBorder style={{ padding: '0.5rem' }}>
       <p>hello world</p>
     </DisjointedBorder>
   ),

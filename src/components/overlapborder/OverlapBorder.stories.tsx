@@ -49,9 +49,7 @@ export const OverlapBorderWithProps: StoryObj<typeof OverlapBorder> = {
     <OverlapBorder
       {...OverlapBorderWithProps.args}
       style={{
-        width: 'max-content',
         padding: '2rem',
-        backgroundColor: 'orange',
       }}
     >
       <p>hello world</p>
@@ -63,9 +61,7 @@ export const OverlapBorderDefault: StoryObj<typeof OverlapBorder> = {
   render: () => (
     <OverlapBorder
       style={{
-        width: 'max-content',
         padding: '2rem',
-        backgroundColor: 'orange',
       }}
     >
       <p>hello world</p>

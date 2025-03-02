@@ -49,7 +49,6 @@ export const NormalBorderWithProps: StoryObj<typeof NormalBorder> = {
     <NormalBorder
       {...NormalBorderWithProps.args}
       style={{
-        width: 'max-content',
         padding: '2rem',
       }}
     >
@@ -62,7 +61,6 @@ export const NormalBorderDefault: StoryObj<typeof NormalBorder> = {
   render: () => (
     <NormalBorder
       style={{
-        width: 'max-content',
         padding: '2rem',
       }}
     >
