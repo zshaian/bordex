@@ -61,6 +61,7 @@ export const StripeBorderWithProps: StoryObj<typeof StripeBorder> = {
       {...StripeBorderWithProps.args}
       style={{
         padding: '2rem',
+        color: COLOR_THEME.secondary,
       }}
     >
       <p>hello world</p>
@@ -73,6 +74,7 @@ export const StripeBorderDefault: StoryObj<typeof StripeBorder> = {
     <StripeBorder
       style={{
         padding: '2rem',
+        color: COLOR_THEME.secondary,
       }}
     >
       <p>hello world</p>

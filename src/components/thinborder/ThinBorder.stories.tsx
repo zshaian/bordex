@@ -39,6 +39,7 @@ export const ThinBorderWithProps: StoryObj<typeof ThinBorder> = {
       {...ThinBorderWithProps.args}
       style={{
         padding: '1rem',
+        color: COLOR_THEME.secondary,
       }}
     >
       <p>hello world</p>
@@ -51,6 +52,7 @@ export const ThinBorderDefault: StoryObj<typeof ThinBorder> = {
     <ThinBorder
       style={{
         padding: '2rem',
+        color: COLOR_THEME.secondary,
       }}
     >
       <p>hello world</p>

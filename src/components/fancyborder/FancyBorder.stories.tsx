@@ -50,6 +50,7 @@ export const FancyBorderWithProps: StoryObj<typeof FancyBorder> = {
       {...FancyBorderWithProps.args}
       style={{
         padding: '2rem',
+        color: COLOR_THEME.secondary,
       }}
     >
       <p>hello world</p>
@@ -62,6 +63,7 @@ export const FancyBorderDefault: StoryObj<typeof FancyBorder> = {
     <FancyBorder
       style={{
         padding: '2rem',
+        color: COLOR_THEME.secondary,
       }}
     >
       <p>hello world</p>

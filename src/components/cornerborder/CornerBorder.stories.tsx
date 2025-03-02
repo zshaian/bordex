@@ -50,6 +50,7 @@ export const CornerBorderWithProps: StoryObj<typeof CornerBorder> = {
       {...CornerBorderWithProps.args}
       style={{
         padding: '2rem',
+        color: COLOR_THEME.secondary,
       }}
     >
       <p>hello world</p>
@@ -59,7 +60,7 @@ export const CornerBorderWithProps: StoryObj<typeof CornerBorder> = {
 
 export const CornerBorderDefault: StoryObj<typeof CornerBorder> = {
   render: () => (
-    <CornerBorder style={{ padding: '2rem' }}>
+    <CornerBorder style={{ padding: '2rem', color: COLOR_THEME.secondary }}>
       <p>hello world</p>
     </CornerBorder>
   ),

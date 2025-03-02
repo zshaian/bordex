@@ -46,7 +46,10 @@ export const SmallBlurBorder: StoryObj<typeof BlurBorder> = {
     borderColor: 'orange',
   },
   render: () => (
-    <BlurBorder {...SmallBlurBorder.args} style={{ padding: '2rem' }}>
+    <BlurBorder
+      {...SmallBlurBorder.args}
+      style={{ padding: '2rem', color: COLOR_THEME.secondary }}
+    >
       <p>hello world</p>
     </BlurBorder>
   ),

@@ -48,7 +48,7 @@ export const GradientBorderWithProps: StoryObj<typeof GradientBorder> = {
   render: () => (
     <GradientBorder
       {...GradientBorderWithProps.args}
-      style={{ padding: '2rem' }}
+      style={{ padding: '2rem', color: COLOR_THEME.secondary }}
     >
       <p>helllo world</p>
     </GradientBorder>
@@ -57,7 +57,7 @@ export const GradientBorderWithProps: StoryObj<typeof GradientBorder> = {
 
 export const GradientBorderDefault: StoryObj<typeof GradientBorder> = {
   render: () => (
-    <GradientBorder style={{ padding: '2rem' }}>
+    <GradientBorder style={{ padding: '2rem', color: COLOR_THEME.secondary }}>
       <p>helllo world</p>
     </GradientBorder>
   ),

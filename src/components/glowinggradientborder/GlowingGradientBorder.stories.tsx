@@ -52,6 +52,7 @@ export const GlowingGradientBorderWithProps: StoryObj<
       {...GlowingGradientBorderWithProps.args}
       style={{
         padding: '2rem',
+        color: COLOR_THEME.secondary,
       }}
     >
       <p>hello world</p>
@@ -66,6 +67,7 @@ export const GlowingGradientBorderDefault: StoryObj<
     <GlowingGradientBorder
       style={{
         padding: '2rem',
+        color: COLOR_THEME.secondary,
       }}
     >
       <p>hello world</p>
