@@ -3,7 +3,7 @@ import { BlurBorderProps } from './BlurBorder.types';
 import { BORDER_SIZE, COLOR_THEME } from '../../constants';
 import './BlurBorder.css';
 
-const BlurBorderDefaultOptions = {
+const blurBorderDefaultOptions = {
   borderBlur: '10px',
   borderWidth: BORDER_SIZE.md,
   borderColor: COLOR_THEME.primary,
@@ -12,9 +12,9 @@ const BlurBorderDefaultOptions = {
 const BlurBorder = forwardRef<HTMLDivElement, BlurBorderProps>((props, ref) => {
   const {
     children,
-    borderColor = BlurBorderDefaultOptions.borderColor,
-    borderWidth = BlurBorderDefaultOptions.borderWidth,
-    borderBlur = BlurBorderDefaultOptions.borderBlur,
+    borderColor = blurBorderDefaultOptions.borderColor,
+    borderWidth = blurBorderDefaultOptions.borderWidth,
+    borderBlur = blurBorderDefaultOptions.borderBlur,
     style,
     ...rest
   } = props;
