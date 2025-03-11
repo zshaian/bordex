@@ -6,6 +6,11 @@
   A simple React component library for addding styled borders to your elements.
 </div>
 
+> [!NOTE]
+> This was originally a JavaScript library but has now been transformed into a simple React 
+> component library. If you are still using the old version, you can find it at [v0.2.0](https://github.com/zshaian/bordex/tree/v0.2.0) or browse all previous versions under the [Tags](https://github.com/zshaian/bordex/tags) section.
+> The documentation for the previous JavaScript library is maintained separately. You can find it in the [Bordex Docs](https://bordex.netlify.app/) or [Bordex Archieve Repo Docs](https://github.com/zshaian/bordex-docs)
+
 ## Table of Contents
 
 - [Installation](#installation)
