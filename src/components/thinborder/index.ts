@@ -1,1 +1,1 @@
-export { default } from './ThinBorder';
+export { default as ThinBorder } from './ThinBorder';

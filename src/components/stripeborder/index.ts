@@ -1,1 +1,1 @@
-export { default } from './StripeBorder';
+export { default as StripeBorder } from './StripeBorder';

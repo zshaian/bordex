@@ -1,1 +1,1 @@
-export { default } from './GradientBorder';
+export { default as GradientBorder } from './GradientBorder';

@@ -1,1 +1,1 @@
-export { default } from './FancyBorder';
+export { default as FancyBorder } from './FancyBorder';

@@ -1,1 +1,1 @@
-export { default } from './CornerBorder';
+export { default as CornerBorder } from './CornerBorder';

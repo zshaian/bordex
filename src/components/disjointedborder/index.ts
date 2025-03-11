@@ -1,1 +1,1 @@
-export { default } from './DisjointedBorder';
+export { default as DisjointedBorder } from './DisjointedBorder';

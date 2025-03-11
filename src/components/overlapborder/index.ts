@@ -1,1 +1,1 @@
-export { default } from './OverlapBorder';
+export { default as OverlapBorder } from './OverlapBorder';

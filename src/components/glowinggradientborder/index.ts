@@ -1,1 +1,1 @@
-export { default } from './GlowingGradientBorder';
+export { default as GlowingGradientBorder } from './GlowingGradientBorder';

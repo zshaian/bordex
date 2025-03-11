@@ -1,1 +1,1 @@
-export { default } from './BlurBorder';
+export { default as BlurBorder } from './BlurBorder';

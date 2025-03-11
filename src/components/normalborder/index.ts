@@ -1,1 +1,1 @@
-export { default } from './NormalBorder';
+export { default as NormalBorder } from './NormalBorder';
