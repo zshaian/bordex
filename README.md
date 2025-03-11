@@ -3,14 +3,14 @@
 
   <h1>Bordex</h1>
 
-  A Javascript library for adding pre-styled borders for HTML elements.
+  A simple React component library for addding styled borders to your elements.
 </div>
 
 ## Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [API](#api)
+- [Documentation](#documentation)
 - [Examples](#examples)
 - [Contributing](#contributing)
 - [License](#license)
@@ -23,47 +23,48 @@ You can install Bordex via npm:
 npm install bordex
 ```
 
-Alternatively, you can include it directly via CDN
-
-```js
-  import { addGradientBorder } from 'https://unpkg.com/bordex@latest/dist/index.js';
-```
-
 ## Usage
 
 Here's a quick example of how to use Bordex in your project:
 
-```js
-import { addGradientBorder } from 'bordex';
+```tsx
+import { GradientBorder } from 'bordex';
 
-// Assuming you have an HTML element to apply the border to
-const element = document.getElementById('element');
-const anotherElement = document.getElementById('anotherElement');
-
-// Add a gradient bordre to an elment with a default opions.
-addGradientBorder(element);
-
-// Add a gradient border to an element with a specific set of options.
-addGradientBorder(anotherElement, { angle: '90deg', colors: ['red', 'orange'] });
+export default function App() {
+  return (
+    <GradientBorder
+      angle="45deg"
+      colors={['red', 'green', 'blue']}
+      borderWidth="5px"
+    >
+      <p>Gradient Border</p>
+    </GradientBorder>
+  );
+}
 ```
-## API
-Check out the [API documentation](https://bordex.netlify.app/docs/api/) for a detailed list of available functions and options.
+## Documentation
+Check out the [Bordex Documentation](https://zshaian.github.io/bordex/) for a detailed list of available components and options.
 
 ## Examples
 Let's see an example on how to add a **stripe border** to an element
-```js
-import { addGradientBorder } from 'bordex';
+```tsx
+import { StripeBorder } from 'bordex';
 
-// Assuming you have an HTML element to apply the border to
-const element = document.getElementById('element');
-
-// Add a stripe border to an elemen with a default options.
-// The third argument is a class name for the created border element.
-addGradientBorder(element, {}, 'gradient-border-element');
+export default function App(){
+  return (
+    <StripeBorder
+    borderWidth='5px'
+    stripeWidth='10'
+    angle='45deg'
+    colors={['red', 'orange', 'lightblue']}>
+      <p>Stripe Border</p>
+    </StripeBorder>
+  )
+}
 ```
-![an element with a gradient border to it](https://i.imgur.com/dyD2sZp.jpeg)
+![an element with a stripe border into it](./src/assets/example_stripe_border.jpg)
 
-Check out the [Example Borders](https://bordex.netlify.app/docs/category/border---styles), [Codpen Demo](https://codepen.io/zhaian/pen/XWvBGMb) for more detailed usage and demos.
+Check out the [Documentation](https://zshaian.github.io/bordex/) for a more detailed list about the available styled borders.
 
 ## Contributing
 
