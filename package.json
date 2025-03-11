@@ -1,6 +1,6 @@
 {
   "name": "bordex",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/index.d.ts",
@@ -36,9 +36,10 @@
     "border-style",
     "custom-borders",
     "css-borders",
-    "library"
+    "library",
+    "react"
   ],
-  "description": "A JavaScript library for generating stylish pre-styled borders for HTML elements.",
+  "description": "A simple React component library for addding styled borders to your elements.",
   "homepage": "https://zshaian.github.io/bordex",
   "repository": {
     "type": "git",
