@@ -1,0 +1,15 @@
+node_modules/
+dist/
+build/
+coverage/
+public/
+storybook-static/
+*.min.js
+*.bundle.js
+*.log
+*.lock
+.DS_Store
+.env
+.vscode/
+.idea/
+*.iml

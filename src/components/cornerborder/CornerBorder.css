@@ -1,0 +1,37 @@
+.corner-border-parent-position {
+  position: relative;
+}
+
+.corner-borders {
+  height: 40%;
+  width: 20%;
+  position: absolute;
+}
+
+.top-left-corner-border {
+  top: 0;
+  left: 0;
+  border-right: none !important;
+  border-bottom: none !important;
+}
+
+.top-right-corner-border {
+  top: 0;
+  right: 0;
+  border-left: none !important;
+  border-bottom: none !important;
+}
+
+.bottom-left-corner-border {
+  bottom: 0;
+  left: 0;
+  border-right: none !important;
+  border-top: none !important;
+}
+
+.bottom-right-corner-border {
+  bottom: 0;
+  right: 0;
+  border-left: none !important;
+  border-top: none !important;
+}

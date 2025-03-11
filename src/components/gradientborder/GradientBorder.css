@@ -1,0 +1,10 @@
+.gradient-border-parent-position {
+  color: white;
+  background-color: black;
+  position: relative;
+}
+
+.gradient-border {
+  position: absolute;
+  z-index: -1;
+}

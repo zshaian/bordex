@@ -1,0 +1,47 @@
+.fancy-border-parent-position {
+  position: relative;
+}
+
+.fancy-corner-borders {
+  --corner-border-size: 10px;
+  height: var(--corner-border-size);
+  width: var(--corner-border-size);
+  border: inherit;
+  background: transparent;
+  position: absolute;
+}
+
+.fancy-outside-border {
+  background-color: transparent;
+  position: absolute;
+  border: inherit;
+  z-index: -2;
+}
+
+.fancy-top-left-corner-border {
+  top: 0;
+  left: 0;
+  border-left: none !important;
+  border-top: none !important;
+}
+
+.fancy-top-right-corner-border {
+  top: 0;
+  right: 0;
+  border-right: none !important;
+  border-top: none !important;
+}
+
+.fancy-bottom-left-corner-border {
+  bottom: 0;
+  left: 0;
+  border-left: none !important;
+  border-bottom: none !important;
+}
+
+.fancy-bottom-right-corner-border {
+  bottom: 0;
+  right: 0;
+  border-right: none !important;
+  border-bottom: none !important;
+}

@@ -1,7 +1,6 @@
 # Node.js
 node_modules/
 npm-debug.log
-package-lock.json
 yarn-error.log
 yarn.lock
 
@@ -50,3 +49,6 @@ coverage/
 
 # Test outputs
 /tests/output/
+
+*storybook.log
+storybook-static
