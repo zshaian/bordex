@@ -20,7 +20,7 @@ const ThinBorder = forwardRef<HTMLDivElement, ThinBorderProps>((props, ref) => {
   const THIN_BORDER_IMAGE_WIDTH = '1.5px';
   const borderSide = getThinBorderSide(side);
   const thinBorderAngle = getThinBorderAngle(side);
-  console.log(borderSide, thinBorderAngle);
+
   const thinBorderStyle: React.CSSProperties = {
     borderImageSource: `linear-gradient(${thinBorderAngle}, rgba(0,0,0,0) 1%, ${borderColor} 50%, rgba(0,0,0,0) 99%)`,
     borderImageWidth: THIN_BORDER_IMAGE_WIDTH,
